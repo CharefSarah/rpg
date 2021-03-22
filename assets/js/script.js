@@ -25,3 +25,35 @@ function BadGuy(health,defence,attack,weakness,resistance) {
 var orc = new BadGuy(300,10,25,all,none);
 
 var darkKnight = new BadGuy(1000,30,40,none,sword); 
+
+// Fonction Coup critique
+function Crit() {
+  // Renvoi un nombre entre 1 et 100
+  crit = Math.floor(Math.random() * 100) + 1;
+  if (crit<=5 ) {
+    return TRUE;
+  }
+}
+
+// petit steak
+function KnightBaseAttack() {
+  
+  attackDamage = knight.attack;
+  if(crit()) {
+    attackDamage = attackDamage *2;
+  }
+
+  return attackDamage;
+}
+
+// gros steak
+function KnightHeavyAttack() {
+
+  attackDamage = knight.attack * 2;
+  if(crit()) {
+    attackDamage = attackDamage *2;
+  }
+
+ return attackDamage;
+
+}
