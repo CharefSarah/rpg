@@ -24,4 +24,4 @@ function BadGuy(health,defence,attack,weakness,resistance) {
 
 var orc = new BadGuy(300,10,25,all,none);
 
-var darkKnight = new BadGuy(1000,30,40,none,sword);
+var darkKnight = new BadGuy(1000,30,40,none,sword); 
