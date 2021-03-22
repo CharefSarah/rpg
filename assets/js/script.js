@@ -1,18 +1,17 @@
 // Consctructeur objet Hero.
-function Hero(health, mana, defence, attack, weakness, resistance) {
+function Hero(health, defence, attack, weakness, resistance) {
     this.health = health;
-    this.mana = mana;
     this.defence = defence;
     this.attack = attack;
     this.weakness = weakness;
     this.resistance = resistance;
   }
 
-  var knight  = new Hero(500,0,30,50,thunder,sword);
+  var knight  = new Hero(500,30,50,thunder,sword);
 
-  var mage = new Hero(300,150,10,75,sword,magic);
+  var mage = new Hero(300,10,75,sword,magic);
 
-  var archer = new Hero(400,50,20,75,none,none);
+  var archer = new Hero(400,20,75,none,none);
 
   //Constructeur objet Méchant.
 function BadGuy(health,defence,attack,weakness,resistance) {
