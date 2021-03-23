@@ -100,12 +100,27 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   damage = BaseAttackDamage();
   badGuy.health = badGuy.health - damage;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
-  return badGuy.health;
+  knight.health = knight.health - damage;
+  document.getElementById("knightHP").innerHTML = knight.health;
+  return badGuy.health, knight.health;
 });
 
 document.getElementById("heavyAttack").addEventListener("click", function heavyAttack() {
   damage = HeavyAttackDamage();
   badGuy.health = badGuy.health - damage;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
-  return badGuy.health;
+  knight.health = knight.health - damage;
+  document.getElementById("knightHP").innerHTML = knight.health;
+  return badGuy.health, knight.health;
 });
+
+function CunterAttack() {
+
+  if (health = health - attackDamage) {
+    attack = knight.health - attack;
+    elseif(health <= 0); {
+      // Enemy is dead
+    }
+  }
+}
+
