@@ -15,7 +15,7 @@ var mage = new Hero(300, 10, 40, "sword", "magic");
 var archer = new Hero(400, 20, 35, "none", "none");
 
 // Test affichage
-window.addEventListener("load",function() {
+window.addEventListener("load", function () {
   // Affichage Stat Knight 
   document.getElementById("knightHP").innerHTML = knight.health;
   document.getElementById("knightDefence").innerHTML = knight.defence;
@@ -59,8 +59,8 @@ function CreateBadGuy() {
   return badGuy
 }
 
-window.addEventListener("load",function() {
-  badGuy =  CreateBadGuy();
+window.addEventListener("load", function () {
+  badGuy = CreateBadGuy();
   document.getElementById("badGuyName").innerHTML = badGuy.name;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
   document.getElementById("badGuyDefence").innerHTML = badGuy.defence;
@@ -74,72 +74,38 @@ window.addEventListener("load",function() {
 function Crit() {
   // Renvoi un nombre entre 1 et 100
   crit = Math.floor(Math.random() * 100) + 1;
-  if (crit <= 5) {
-    return TRUE;
+  if (crit <= 10) {
+    return true;
   }
 }
 
-/////////////////////////////////////// KNIGHT 
-// Petit steak
-function KnightBaseAttack() {
-
+function BaseAttackDamage() {
   attackDamage = knight.attack;
-  if (crit()) {
-    attackDamage = attackDamage * 2;
+  if(Crit()) {
+    attackDamage = attackDamage *2;
   }
-
   return attackDamage;
 }
 
 // Gros steak
-function KnightHeavyAttack() {
-
+function HeavyAttackDamage() {
   attackDamage = knight.attack * 2;
-  if (crit()) {
-    attackDamage = attackDamage * 2;
+  if(Crit()) {
+    attackDamage = attackDamage *2;
   }
-
-  return attackDamage;
-
-}
-
-/////////////////////////////////////// Mage
-// Petit Steak 
-function MageBaseAttack() {
-  attackDamage = mage.attack;
-
-  if (crit()) {
-    attackDamage = attackDamage * 2;
-  }
-
   return attackDamage;
 }
 
-//Gros Steak
-function MageHeavyAttack() {
-  attackDamage = mage.attack * 2;
-  if (crit()) {
-    attackDamage = attackDamage * 2;
-  }
+document.getElementById("baseAttack").addEventListener("click", function baseAttack() {
+  damage = BaseAttackDamage();
+  badGuy.health = badGuy.health - damage;
+  document.getElementById("badGuyHealth").innerHTML = badGuy.health;
+  return badGuy.health;
+});
 
-  return attackDamage;
-}
-
-////////////////////////////////////// Archer
-// Petit steak
-function ArcherBaseAttack() {
-  attackDamage = archer.attack;
-
-  if (crit()) {
-    attackDamage = attackDamage * 2;
-  }
-}
-
-// Gros Steak
-function ArcherHeavyAttack() {
-  attackDamage = archer.attack * 2;
-  if (crit()) {
-    attackDamage = attackDamage * 2;
-  }
-}
-
+document.getElementById("heavyAttack").addEventListener("click", function heavyAttack() {
+  damage = HeavyAttackDamage();
+  badGuy.health = badGuy.health - damage;
+  document.getElementById("badGuyHealth").innerHTML = badGuy.health;
+  return badGuy.health;
+});
