@@ -7,27 +7,45 @@ function Hero(health, defence, attack, weakness, resistance) {
   this.resistance = resistance;
 }
 
-function CreateHero() {
-  pickedClass = document.getElementById("heroButton").value;
-  window.alert(pickedClass);
-  if(pickedClass="knight") {
-    var hero = new Hero(500, 30, 30, "thunder", "sword");
-  } else if(pickedClass="mage") {
-    var hero = new Hero(300, 10, 40, "sword", "magic");
-  } else if(pickedClass="archer") {
-    var hero =  new Hero(400, 20, 35, "none", "none");
-  }
-  return hero;
-}
+// Selection de tout les boutons de choix de classes
+var classSelectArray = document.querySelectorAll('.classSelect');
+// choix de classe selon le bouton : 
+var hero = classSelectArray.forEach(element => {
+  element.addEventListener('click', function CreateHero() {
+    if (element.id == "knight") {
 
-document.getElementById("heroButton").addEventListener("click", function () {
-  hero = CreateHero();
-  document.getElementById("heroHealth").innerHTML = hero.health;
-  document.getElementById("heroDefence").innerHTML = hero.defence;
-  document.getElementById("heroAttack").innerHTML = hero.attack;
-  document.getElementById("heroWeakness").innerHTML = hero.weakness;
-  document.getElementById("heroResistance").innerHTML = hero.resistance;
+      hero = new Hero(500, 30, 30, "thunder", "sword");
+      document.getElementById("heroHealth").innerHTML = hero.health;
+      document.getElementById("heroDefence").innerHTML = hero.defence;
+      document.getElementById("heroAttack").innerHTML = hero.attack;
+      document.getElementById("heroWeakness").innerHTML = hero.weakness;
+      document.getElementById("heroResistance").innerHTML = hero.resistance;
+      console.log(hero);
+      return hero;
 
+    } else if (element.id == "mage") {
+
+      hero = new Hero(300, 10, 40, "sword", "magic");
+      document.getElementById("heroHealth").innerHTML = hero.health;
+      document.getElementById("heroDefence").innerHTML = hero.defence;
+      document.getElementById("heroAttack").innerHTML = hero.attack;
+      document.getElementById("heroWeakness").innerHTML = hero.weakness;
+      document.getElementById("heroResistance").innerHTML = hero.resistance;
+      console.log(hero);
+      return hero;
+
+    } else if (element.id == "archer") {
+
+      hero = new Hero(400, 20, 35, "none", "none");
+      document.getElementById("heroHealth").innerHTML = hero.health;
+      document.getElementById("heroDefence").innerHTML = hero.defence;
+      document.getElementById("heroAttack").innerHTML = hero.attack;
+      document.getElementById("heroWeakness").innerHTML = hero.weakness;
+      document.getElementById("heroResistance").innerHTML = hero.resistance;
+      console.log(hero);
+      return hero;
+    }
+  });
 });
 
 //Constructeur objet Méchant.
@@ -40,15 +58,15 @@ function BadGuy(name, health, defence, attack, weakness, resistance) {
   this.resistance = resistance;
 }
 
-// compteur de round
-round = 0;
+// Compteur de round
+round = 1;
 
-//Creation du méchant : ( non vraiment, meilleure commentaire ever )
+//Creation du méchant selon le nombre de round: 
 function CreateBadGuy() {
-  if (round == 10) {
+  if (round == 10 || round == 20 || round == 30) {
     var badGuy = new BadGuy("Dark Knight", 1000, 30, 40, "none", "sword");
   } else {
-    var badGuy = new BadGuy("Orc", 300, 10, 25, "all", "none");
+    var badGuy = new BadGuy("Orc", 300, 10, 15, "all", "none");
   }
   return badGuy
 }
@@ -61,7 +79,6 @@ window.addEventListener("load", function () {
   document.getElementById("badGuyAttack").innerHTML = badGuy.attack;
   document.getElementById("badGuyWeakness").innerHTML = badGuy.weakness;
   document.getElementById("badGuyResistance").innerHTML = badGuy.resistance;
-
 });
 
 // Fonction Coup critique
@@ -74,60 +91,97 @@ function Crit() {
     return false;
   }
 }
-
+//Petit Steak
 function BaseAttackDamage() {
   attackDamage = hero.attack;
-  if(Crit()) {
-    attackDamage = attackDamage *2;
+  if (Crit()) {
+    attackDamage = attackDamage * 2;
   }
   return attackDamage;
 }
 
-// Gros steak
+//Gros Steak
 function HeavyAttackDamage() {
   attackDamage = hero.attack * 2;
-  if(Crit()) {
-    attackDamage = attackDamage *2;
+  if (Crit()) {
+    attackDamage = attackDamage * 2;
   }
   return attackDamage;
 }
 
-//Esquive, 1/10 chance d'esquiver
+//Chance d'esquive, 10%
 function Dodge() {
   dodge = Math.floor(Math.random() * 100) + 1;
-  if(dodge<=10) {
+  if (dodge <= 10) {
     return true;
   } else {
     return false;
   }
- // if(Dodge())
 }
 
 document.getElementById("baseAttack").addEventListener("click", function baseAttack() {
   damage = BaseAttackDamage();
   badGuy.health = badGuy.health - damage;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
-  knight.health = knight.health - damage;
-  document.getElementById("knightHP").innerHTML = knight.health;
-  return badGuy.health, knight.health;
+  if (Dodge()) {
+    ennemyDamage = 0;
+  } else {
+    ennemyDamage = badGuy.attack;
+  }
+  hero.health = hero.health - ennemyDamage;
+  document.getElementById("heroHealth").innerHTML = hero.health;
 });
+
+
 
 document.getElementById("heavyAttack").addEventListener("click", function heavyAttack() {
   damage = HeavyAttackDamage();
   badGuy.health = badGuy.health - damage;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
-  knight.health = knight.health - damage;
-  document.getElementById("knightHP").innerHTML = knight.health;
-  return badGuy.health, knight.health;
+  if (Dodge()) {
+    ennemyDamage = 0;
+  } else {
+    ennemyDamage = badGuy.attack;
+  }
+  hero.health = hero.health - ennemyDamage;
+  document.getElementById("heroHealth").innerHTML = hero.health;
 });
+
+
 
 function CunterAttack() {
 
   if (health = health - attackDamage) {
-    attack = knight.health - attack;
+    attack = hero.health - attack;
     elseif(health <= 0); {
       // Enemy is dead
     }
   }
-}
+};
+// Nombre de potion, 50HP/Potion
+stockPotion = 3; 
 
+// Initialisation du nombre de potion au chargement
+window.addEventListener("load", function () {
+  document.getElementById("stockPotion").innerHTML = stockPotion;
+});
+
+// Function pour utiliser des potions tant qu'il en reste
+document.getElementById("potion").addEventListener("click", function () {
+  if (stockPotion > 0) {
+    hero.health = hero.health + 50;
+    stockPotion--;
+    document.getElementById("heroHealth").innerHTML = hero.health;
+    document.getElementById("stockPotion").innerHTML = stockPotion;
+  } else {
+    document.getElementById("stockPotion").innerHTML = "Vous n'avez plus assez de potion";
+  }
+});
+
+// Ajout d'un nombre de potion entre 1 et 3, faudra juste lier ca a la victoire plutot qu'a un bouton mais ca fonctionne.
+function addPotion() {
+  potionToAdd = Math.floor(Math.random() * 2) + 1; //chiffre en 1 et 3
+  stockPotion = stockPotion + potionToAdd;
+  document.getElementById("stockPotion").innerHTML = stockPotion;
+  return stockPotion;
+}

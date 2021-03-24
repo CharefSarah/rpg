@@ -13,9 +13,9 @@
 
 <body>
     <div>
-        <button id="heroButton" value="knight">knight</button>
-        <button id="heroButton" value="mage">mage</button>
-        <button id="heroButton" value="archer">archer</button>
+        <button class="classSelect" id="knight" value="knight">knight</button>
+        <button class="classSelect" id="mage" value="mage">mage</button>
+        <button class="classSelect" id="archer" value="archer">archer</button>
     </div>
     <div>
         Hero : <br>
@@ -42,6 +42,8 @@
         <button id="heavyAttack">Grosse attaque</button>
 
         <button id="potion">Potion <span id="stockPotion"></span></button>
+
+        <button id="addPotion" onclick="addPotion()">addPot</button>
     </div>
 
     <script src="assets/js/script.js"></script>
