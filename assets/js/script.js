@@ -1,11 +1,15 @@
 // Consctructeur objet Hero.
-function Hero(health, defence, attack, weakness, resistance) {
+function Hero(health, maxHealth, defence, attack, weakness, resistance) {
   this.health = health;
+  this.maxHealth = maxHealth;
   this.defence = defence;
   this.attack = attack;
   this.weakness = weakness;
   this.resistance = resistance;
 }
+
+let health = document.getElementById("healthBar");
+let maxHealth = document.getElementById("healthBar").max;
 
 // Selection de tout les boutons de choix de classes
 var classSelectArray = document.querySelectorAll('.classSelect');
@@ -14,8 +18,10 @@ var hero = classSelectArray.forEach(element => {
   element.addEventListener('click', function CreateHero() {
     if (element.id == "knight") {
 
-      hero = new Hero(500, 30, 30, "thunder", "sword");
+      hero = new Hero(500, 500, 30, 30, "thunder", "sword");
       document.getElementById("heroHealth").innerHTML = hero.health;
+      health.value = hero.health;
+      health.max = hero.maxHealth;
       document.getElementById("heroDefence").innerHTML = hero.defence;
       document.getElementById("heroAttack").innerHTML = hero.attack;
       document.getElementById("heroWeakness").innerHTML = hero.weakness;
@@ -25,8 +31,10 @@ var hero = classSelectArray.forEach(element => {
 
     } else if (element.id == "mage") {
 
-      hero = new Hero(300, 10, 40, "sword", "magic");
+      hero = new Hero(300, 300, 10, 40, "sword", "magic");
       document.getElementById("heroHealth").innerHTML = hero.health;
+      health.value = hero.health;
+      health.max = hero.maxHealth;
       document.getElementById("heroDefence").innerHTML = hero.defence;
       document.getElementById("heroAttack").innerHTML = hero.attack;
       document.getElementById("heroWeakness").innerHTML = hero.weakness;
@@ -36,8 +44,10 @@ var hero = classSelectArray.forEach(element => {
 
     } else if (element.id == "archer") {
 
-      hero = new Hero(400, 20, 35, "none", "none");
+      hero = new Hero(400, 400, 20, 35, "none", "none");
       document.getElementById("heroHealth").innerHTML = hero.health;
+      health.value = hero.health;
+      health.max = hero.maxHealth;
       document.getElementById("heroDefence").innerHTML = hero.defence;
       document.getElementById("heroAttack").innerHTML = hero.attack;
       document.getElementById("heroWeakness").innerHTML = hero.weakness;
@@ -130,6 +140,7 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   }
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
+  health.value = hero.health;
 });
 
 
@@ -145,6 +156,7 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   }
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
+  health.value = hero.health;
 });
 
 
@@ -169,12 +181,17 @@ window.addEventListener("load", function () {
 // Function pour utiliser des potions tant qu'il en reste
 document.getElementById("potion").addEventListener("click", function () {
   if (stockPotion > 0) {
-    hero.health = hero.health + 50;
-    stockPotion--;
-    document.getElementById("heroHealth").innerHTML = hero.health;
-    document.getElementById("stockPotion").innerHTML = stockPotion;
+    if(hero.health<hero.maxHealth) {
+      hero.health = hero.health + 50;
+      stockPotion--;
+      document.getElementById("heroHealth").innerHTML = hero.health;
+      document.getElementById("stockPotion").innerHTML = stockPotion;
+    } else {
+      document.getElementById("potionAlert").innerHTML = "Vous n'avez pas besoin de potion !"
+    }
+
   } else {
-    document.getElementById("stockPotion").innerHTML = "Vous n'avez plus assez de potion";
+    document.getElementById("potionAlert").innerHTML = "Vous n'avez plus assez de potion";
   }
 });
 
@@ -185,3 +202,4 @@ function addPotion() {
   document.getElementById("stockPotion").innerHTML = stockPotion;
   return stockPotion;
 }
+

@@ -20,6 +20,8 @@
     <div>
         Hero : <br>
         Point de vie : <span id="heroHealth"></span><br>
+        <progress id="healthBar" value="100" max="100"></progress> <br>
+
         Defense : <span id="heroDefence"></span><br>
         Attaque : <span id="heroAttack"></span><br>
         Faiblesse : <span id="heroWeakness"></span><br>
@@ -42,6 +44,7 @@
         <button id="heavyAttack">Grosse attaque</button>
 
         <button id="potion">Potion <span id="stockPotion"></span></button>
+        <p id="potionAlert"></p>
 
         <button id="addPotion" onclick="addPotion()">addPot</button>
     </div>
