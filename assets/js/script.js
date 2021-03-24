@@ -138,6 +138,8 @@ function DeathEnemy() {
   if (badGuy.health <= 0) {
     alert("méchant ko"); {
       round++;
+      addLife();
+      addPotion();
       document.getElementById("round").innerHTML = round;
       badGuy = CreateBadGuy();
       DisplayBadGuy();
@@ -203,9 +205,6 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   DeathHero();
   DeathEnemy();
   LostLife();
-  addLife();
-  addPotion();
-
 
 });
 
@@ -221,10 +220,6 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   DeathHero();
   DeathEnemy();
   LostLife();
-  addLife();
-  addPotion();
- 
-
 
 });
 
