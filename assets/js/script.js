@@ -138,7 +138,6 @@ function MoveHealthBar() {
   badGuyHealth.value = badGuy.health;
 }
 
-
 document.getElementById("baseAttack").addEventListener("click", function baseAttack() {
   damage = BaseAttackDamage();
   badGuy.health = badGuy.health - damage;
@@ -215,8 +214,4 @@ function addPotion() {
   stockPotion = stockPotion + potionToAdd;
   document.getElementById("stockPotion").innerHTML = stockPotion;
   return stockPotion;
-}
-
-function addLife() {
-  
 }
