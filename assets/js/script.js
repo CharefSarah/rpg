@@ -110,8 +110,7 @@ function CreateBadGuy() {
   return badGuy
 }
 
-window.addEventListener("load", function () {
-  badGuy = CreateBadGuy();
+function DisplayBadGuy() {
   document.getElementById("badGuyName").innerHTML = badGuy.name;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
   badGuyHealth.value = badGuy.health;
@@ -120,7 +119,32 @@ window.addEventListener("load", function () {
   document.getElementById("badGuyAttack").innerHTML = badGuy.attack;
   document.getElementById("badGuyWeakness").innerHTML = badGuy.weakness;
   document.getElementById("badGuyResistance").innerHTML = badGuy.resistance;
+}
+
+
+window.addEventListener("load", function() {
+  badGuy = CreateBadGuy();
+  DisplayBadGuy();
 });
+
+
+function DeathHero() {
+  if (hero.health <= 0) {
+    alert("héro ko");
+  }
+}
+
+function DeathEnemy() {
+  if (badGuy.health <= 0) {
+    alert("méchant ko"); {
+      round++;
+      document.getElementById("round").innerHTML = round;
+      badGuy = CreateBadGuy();
+      DisplayBadGuy();
+
+    }
+  }
+}
 
 // Fonction Coup critique
 function Crit() {
@@ -248,12 +272,9 @@ function addPotion() {
 }
 
 
-
-
 function addLife() {
   if (round == 5 || round == 10 || round == 15 || round == 20 || round == 25 || round == 30) {
     life = life + 1;
     document.getElementById("lifeTotal").innerHTML = life;
   }
-
 }
