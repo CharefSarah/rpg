@@ -8,20 +8,24 @@ function Hero(health, maxHealth, defence, attack, weakness, resistance) {
   this.resistance = resistance;
 }
 
+
+
 function deathEnemy() {
   if (badGuy.health <= 0) {
-    alert("méchant ko");
+    alert("méchant ko");{
+      round++;
+      document.getElementById("round").innerHTML = round;
+    }
   }
-}
-
-
-function deathHero() {
-  if (hero.health <= 0) {
-    alert("héro ko");
-  }
-}
-
-
+      }
+    
+  
+  function deathHero() {
+    if (hero.health <= 0) {
+      alert("héro ko");}
+        }
+      
+    
 let health = document.getElementById("healthBar");
 
 let badGuyHealth = document.getElementById("badGuyHealthBar");
@@ -91,6 +95,7 @@ function BadGuy(name, health, defence, attack, weakness, resistance) {
 
 // Compteur de round
 var round = 1;
+document.getElementById("round").innerHTML = round;
 
 //Creation du méchant selon le nombre de round: 
 function CreateBadGuy() {
