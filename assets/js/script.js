@@ -7,18 +7,21 @@ function Hero(health, maxHealth, defence, attack, weakness, resistance) {
   this.weakness = weakness;
   this.resistance = resistance;
 }
+
 function deathEnemy() {
   if (badGuy.health <= 0) {
-    alert("méchant ko");}
-      }
-    
-  
-  function deathHero() {
-    if (hero.health <= 0) {
-      alert("héro ko");}
-        }
-      
-    
+    alert("méchant ko");
+  }
+}
+
+
+function deathHero() {
+  if (hero.health <= 0) {
+    alert("héro ko");
+  }
+}
+
+
 let health = document.getElementById("healthBar");
 
 let badGuyHealth = document.getElementById("badGuyHealthBar");
@@ -29,7 +32,6 @@ var classSelectArray = document.querySelectorAll('.classSelect');
 var hero = classSelectArray.forEach(element => {
   element.addEventListener('click', function CreateHero() {
     if (element.id == "knight") {
-
       hero = new Hero(500, 500, 30, 30, "thunder", "sword");
       document.getElementById("heroHealth").innerHTML = hero.health;
       health.value = hero.health;
@@ -39,10 +41,12 @@ var hero = classSelectArray.forEach(element => {
       document.getElementById("heroWeakness").innerHTML = hero.weakness;
       document.getElementById("heroResistance").innerHTML = hero.resistance;
       console.log(hero);
-      return hero;
+      document.getElementById("knight").disabled=true; 
+      document.getElementById("mage").disabled=true;
+      document.getElementById("rogue").disabled=true; 
+        return hero;
 
     } else if (element.id == "mage") {
-
       hero = new Hero(300, 300, 10, 40, "sword", "magic");
       document.getElementById("heroHealth").innerHTML = hero.health;
       health.value = hero.health;
@@ -52,10 +56,12 @@ var hero = classSelectArray.forEach(element => {
       document.getElementById("heroWeakness").innerHTML = hero.weakness;
       document.getElementById("heroResistance").innerHTML = hero.resistance;
       console.log(hero);
+      document.getElementById("knight").disabled=true; 
+      document.getElementById("mage").disabled=true;
+      document.getElementById("rogue").disabled=true;
       return hero;
 
-    } else if (element.id == "archer") {
-
+    } else if (element.id == "rogue") {
       hero = new Hero(400, 400, 20, 35, "none", "none");
       document.getElementById("heroHealth").innerHTML = hero.health;
       health.value = hero.health;
@@ -65,6 +71,9 @@ var hero = classSelectArray.forEach(element => {
       document.getElementById("heroWeakness").innerHTML = hero.weakness;
       document.getElementById("heroResistance").innerHTML = hero.resistance;
       console.log(hero);
+      document.getElementById("knight").disabled=true; 
+      document.getElementById("mage").disabled=true;
+      document.getElementById("rogue").disabled=true;
       return hero;
     }
   });
@@ -81,7 +90,7 @@ function BadGuy(name, health, defence, attack, weakness, resistance) {
 }
 
 // Compteur de round
-round = 10;
+var round = 1;
 
 //Creation du méchant selon le nombre de round: 
 function CreateBadGuy() {
@@ -159,6 +168,7 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   } else {
     ennemyDamage = badGuy.attack;
   }
+
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
   // J'appelle la fonction pour faire bouger les jauges par rapport aux changement dans les Points de vie de tout le monde
@@ -178,12 +188,13 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   } else {
     ennemyDamage = badGuy.attack;
   }
+
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
   MoveHealthBar();
   deathHero();
   deathEnemy();
-  
+
 });
 
 function CunterAttack() {
@@ -216,7 +227,6 @@ document.getElementById("potion").addEventListener("click", function () {
     } else {
       document.getElementById("potionAlert").innerHTML = "Vous n'avez pas besoin de potion !"
     }
-
   } else {
     document.getElementById("potionAlert").innerHTML = "Vous n'avez plus assez de potion";
   }
@@ -228,4 +238,18 @@ function addPotion() {
   stockPotion = stockPotion + potionToAdd;
   document.getElementById("stockPotion").innerHTML = stockPotion;
   return stockPotion;
+}
+
+
+var life = 3;
+window.addEventListener("load", function () {
+  document.getElementById("lifeTotal").innerHTML = life;
+});
+
+function addLife() {
+  if (round == 5 || round == 10 || round == 15 || round == 20 || round == 25 || round == 30) {
+    life = life + 1;
+    document.getElementById("lifeTotal").innerHTML = life;
+  }
+
 }
