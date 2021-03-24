@@ -7,7 +7,18 @@ function Hero(health, maxHealth, defence, attack, weakness, resistance) {
   this.weakness = weakness;
   this.resistance = resistance;
 }
-
+function deathEnemy() {
+  if (badGuy.health <= 0) {
+    alert("méchant ko");}
+      }
+    
+  
+  function deathHero() {
+    if (hero.health <= 0) {
+      alert("héro ko");}
+        }
+      
+    
 let health = document.getElementById("healthBar");
 
 let badGuyHealth = document.getElementById("badGuyHealthBar");
@@ -70,7 +81,7 @@ function BadGuy(name, health, defence, attack, weakness, resistance) {
 }
 
 // Compteur de round
-round = 1;
+round = 10;
 
 //Creation du méchant selon le nombre de round: 
 function CreateBadGuy() {
@@ -103,6 +114,7 @@ function Crit() {
   } else {
     return false;
   }
+
 }
 //Petit Steak
 function BaseAttackDamage() {
@@ -151,6 +163,9 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   document.getElementById("heroHealth").innerHTML = hero.health;
   // J'appelle la fonction pour faire bouger les jauges par rapport aux changement dans les Points de vie de tout le monde
   MoveHealthBar();
+  deathHero();
+  deathEnemy();
+
 });
 
 
@@ -166,9 +181,10 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
   MoveHealthBar();
+  deathHero();
+  deathEnemy();
+  
 });
-
-
 
 function CunterAttack() {
 
@@ -179,8 +195,6 @@ function CunterAttack() {
     }
   }
 };
-
-
 
 // Nombre de potion, 50HP/Potion
 stockPotion = 3;
