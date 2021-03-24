@@ -12,13 +12,13 @@ function Hero(health, maxHealth, defence, attack, weakness, resistance) {
 
 function deathEnemy() {
   if (badGuy.health <= 0) {
-    alert("méchant ko");{
+    confirm("l'énnemi est mort !");{
       round++;
       document.getElementById("round").innerHTML = round;
     }
   }
       }
-    
+   
   
   function deathHero() {
     if (hero.health <= 0) {

@@ -14,13 +14,13 @@
 </head>
 
 <body>
-    <div>
+    <div class="p-2">
         <span id=round> </span>
         <button class="classSelect" id="knight" value="knight">knight</button>
         <button class="classSelect" id="mage" value="mage">mage</button>
         <button class="classSelect" id="archer" value="archer">archer</button>
     </div>
-    <div>
+    <div class="p-3">
         Hero : <br>
         Point de vie : <span id="heroHealth"></span><br>
         <progress id="healthBar" value="100" max="100"></progress> <br>
@@ -30,7 +30,7 @@
         Résistance : <span id="heroResistance"></span>
     </div>
     <br>
-    <div>
+    <div class="text-right p-2">
         LE MÉCHANT : <br>
         Nom : <span id="badGuyName"></span><br>
         Points de vie : <span id="badGuyHealth"></span><br>
@@ -41,7 +41,7 @@
         Resistance : <span id="badGuyResistance"></span>
 
     </div>
-    <div id="buttons">
+    <div id="buttons" class="text-center">
         <button id="baseAttack">Attaque</button>
 
         <button id="heavyAttack">Grosse attaque</button>
@@ -52,32 +52,6 @@
         <button id="addPotion" onclick="addPotion()">addPot</button>
     </div>
 
-    <!--Modal-->
-    <div class="modal fade" id="#myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span>
-
-                    </button>
-                    <h4 class="modal-title">Modal title</h4>
-
-                </div>
-                <div class="modal-body">
-                    <p>Please enter all values in the fields.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
-    <!--End Modal-->
 
     <script src="assets/js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
