@@ -9,7 +9,8 @@ function Hero(health, maxHealth, defence, attack, weakness, resistance) {
 }
 
 let health = document.getElementById("healthBar");
-let maxHealth = document.getElementById("healthBar").max;
+
+let badGuyHealth = document.getElementById("badGuyHealthBar");
 
 // Selection de tout les boutons de choix de classes
 var classSelectArray = document.querySelectorAll('.classSelect');
@@ -85,6 +86,8 @@ window.addEventListener("load", function () {
   badGuy = CreateBadGuy();
   document.getElementById("badGuyName").innerHTML = badGuy.name;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
+  badGuyHealth.value = badGuy.health;
+  badGuyHealth.max = badGuy.health;
   document.getElementById("badGuyDefence").innerHTML = badGuy.defence;
   document.getElementById("badGuyAttack").innerHTML = badGuy.attack;
   document.getElementById("badGuyWeakness").innerHTML = badGuy.weakness;
@@ -129,6 +132,13 @@ function Dodge() {
   }
 }
 
+//Fonction pour faire bouger les jauges
+function MoveHealthBar() {
+  health.value = hero.health;
+  badGuyHealth.value = badGuy.health;
+}
+
+
 document.getElementById("baseAttack").addEventListener("click", function baseAttack() {
   damage = BaseAttackDamage();
   badGuy.health = badGuy.health - damage;
@@ -140,9 +150,9 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   }
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
-  health.value = hero.health;
+  // J'appelle la fonction pour faire bouger les jauges par rapport aux changement dans les Points de vie de tout le monde
+  MoveHealthBar();
 });
-
 
 
 document.getElementById("heavyAttack").addEventListener("click", function heavyAttack() {
@@ -156,7 +166,7 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   }
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
-  health.value = hero.health;
+  MoveHealthBar();
 });
 
 
@@ -170,8 +180,11 @@ function CunterAttack() {
     }
   }
 };
+
+
+
 // Nombre de potion, 50HP/Potion
-stockPotion = 3; 
+stockPotion = 3;
 
 // Initialisation du nombre de potion au chargement
 window.addEventListener("load", function () {
@@ -181,11 +194,12 @@ window.addEventListener("load", function () {
 // Function pour utiliser des potions tant qu'il en reste
 document.getElementById("potion").addEventListener("click", function () {
   if (stockPotion > 0) {
-    if(hero.health<hero.maxHealth) {
+    if (hero.health < hero.maxHealth) {
       hero.health = hero.health + 50;
       stockPotion--;
       document.getElementById("heroHealth").innerHTML = hero.health;
       document.getElementById("stockPotion").innerHTML = stockPotion;
+      MoveHealthBar();
     } else {
       document.getElementById("potionAlert").innerHTML = "Vous n'avez pas besoin de potion !"
     }
@@ -203,3 +217,6 @@ function addPotion() {
   return stockPotion;
 }
 
+function addLife() {
+  
+}
