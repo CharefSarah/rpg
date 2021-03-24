@@ -10,25 +10,44 @@ function Hero(health, maxHealth, defence, attack, weakness, resistance) {
 
 
 
-function deathEnemy() {
+function DeathEnemy() {
   if (badGuy.health <= 0) {
-    alert("méchant ko");{
+    alert("méchant ko"); {
       round++;
       document.getElementById("round").innerHTML = round;
     }
   }
-      }
-    
-  
-  function deathHero() {
-    if (hero.health <= 0) {
-      alert("héro ko");}
-        }
-      
-    
+}
+
+
+function DeathHero() {
+  if (hero.health <= 0) {
+    alert("héro ko");
+  }
+}
+
+
 let health = document.getElementById("healthBar");
 
 let badGuyHealth = document.getElementById("badGuyHealthBar");
+
+
+function ButtonDisappear() {
+  document.getElementById("knight").style.display = "none";
+  document.getElementById("mage").style.display = "none";
+  document.getElementById("rogue").style.display = "none";
+}
+
+function SetHeroValue() {
+  document.getElementById("heroHealth").innerHTML = hero.health;
+  health.value = hero.health;
+  health.max = hero.maxHealth;
+  document.getElementById("heroDefence").innerHTML = hero.defence;
+  document.getElementById("heroAttack").innerHTML = hero.attack;
+  document.getElementById("heroWeakness").innerHTML = hero.weakness;
+  document.getElementById("heroResistance").innerHTML = hero.resistance;
+  console.log(hero);
+}
 
 // Selection de tout les boutons de choix de classes
 var classSelectArray = document.querySelectorAll('.classSelect');
@@ -37,47 +56,22 @@ var hero = classSelectArray.forEach(element => {
   element.addEventListener('click', function CreateHero() {
     if (element.id == "knight") {
       hero = new Hero(500, 500, 30, 30, "thunder", "sword");
-      document.getElementById("heroHealth").innerHTML = hero.health;
-      health.value = hero.health;
-      health.max = hero.maxHealth;
-      document.getElementById("heroDefence").innerHTML = hero.defence;
-      document.getElementById("heroAttack").innerHTML = hero.attack;
-      document.getElementById("heroWeakness").innerHTML = hero.weakness;
-      document.getElementById("heroResistance").innerHTML = hero.resistance;
-      console.log(hero);
-      document.getElementById("knight").disabled=true; 
-      document.getElementById("mage").disabled=true;
-      document.getElementById("rogue").disabled=true; 
-        return hero;
+      SetHeroValue();
+      ButtonDisappear();
+      return hero;
 
     } else if (element.id == "mage") {
       hero = new Hero(300, 300, 10, 40, "sword", "magic");
       document.getElementById("heroHealth").innerHTML = hero.health;
-      health.value = hero.health;
-      health.max = hero.maxHealth;
-      document.getElementById("heroDefence").innerHTML = hero.defence;
-      document.getElementById("heroAttack").innerHTML = hero.attack;
-      document.getElementById("heroWeakness").innerHTML = hero.weakness;
-      document.getElementById("heroResistance").innerHTML = hero.resistance;
-      console.log(hero);
-      document.getElementById("knight").disabled=true; 
-      document.getElementById("mage").disabled=true;
-      document.getElementById("rogue").disabled=true;
+      SetHeroValue();
+      ButtonDisappear();
       return hero;
 
     } else if (element.id == "rogue") {
       hero = new Hero(400, 400, 20, 35, "none", "none");
       document.getElementById("heroHealth").innerHTML = hero.health;
-      health.value = hero.health;
-      health.max = hero.maxHealth;
-      document.getElementById("heroDefence").innerHTML = hero.defence;
-      document.getElementById("heroAttack").innerHTML = hero.attack;
-      document.getElementById("heroWeakness").innerHTML = hero.weakness;
-      document.getElementById("heroResistance").innerHTML = hero.resistance;
-      console.log(hero);
-      document.getElementById("knight").disabled=true; 
-      document.getElementById("mage").disabled=true;
-      document.getElementById("rogue").disabled=true;
+      SetHeroValue();
+      ButtonDisappear();
       return hero;
     }
   });
@@ -152,9 +146,9 @@ function HeavyAttackDamage() {
 function Dodge() {
   dodge = Math.floor(Math.random() * 100) + 1;
   if (dodge <= 10) {
-    return true;
+    ennemyDamage = 0;
   } else {
-    return false;
+    ennemyDamage = badGuy.attack;
   }
 }
 
@@ -168,18 +162,13 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   damage = BaseAttackDamage();
   badGuy.health = badGuy.health - damage;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
-  if (Dodge()) {
-    ennemyDamage = 0;
-  } else {
-    ennemyDamage = badGuy.attack;
-  }
-
+  Dodge();
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
   // J'appelle la fonction pour faire bouger les jauges par rapport aux changement dans les Points de vie de tout le monde
   MoveHealthBar();
-  deathHero();
-  deathEnemy();
+  DeathHero();
+  DeathEnemy();
 
 });
 
@@ -188,17 +177,12 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   damage = HeavyAttackDamage();
   badGuy.health = badGuy.health - damage;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
-  if (Dodge()) {
-    ennemyDamage = 0;
-  } else {
-    ennemyDamage = badGuy.attack;
-  }
-
+  Dodge();
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
   MoveHealthBar();
-  deathHero();
-  deathEnemy();
+  DeathHero();
+  DeathEnemy();
 
 });
 
