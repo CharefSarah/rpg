@@ -141,6 +141,8 @@ function DeathEnemy() {
       document.getElementById("round").innerHTML = round;
       badGuy = CreateBadGuy();
       DisplayBadGuy();
+      addLife();
+      addPotion();
 
     }
   }
@@ -203,8 +205,7 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   DeathHero();
   DeathEnemy();
   LostLife();
-  addLife();
-  addPotion();
+
 
 
 });
@@ -221,8 +222,7 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   DeathHero();
   DeathEnemy();
   LostLife();
-  addLife();
-  addPotion();
+
  
 
 
