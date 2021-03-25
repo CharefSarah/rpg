@@ -44,9 +44,9 @@
     <p>Niveau: </p><span id=round> </span> <br>
     <p>vie: </p><span id="lifeTotal"></span> <br>
 
-    <button class="classSelect" id="knight" value="knight"> Chevalier</button>
-    <button class="classSelect" id="mage" value="mage"> mage</button>
-    <button class="classSelect" id="rogue" value="rogue"> Voleuse</button><br>
+    <button class="classSelect" id="knight" value="knight"  onClick="chronoStart()"> Chevalier</button>
+    <button class="classSelect" id="mage" value="mage"  onClick="chronoStart()"> mage</button>
+    <button class="classSelect" id="rogue" value="rogue"  onClick="chronoStart()"> Voleuse</button><br>
     <span id=round> </span>
   </div>
   <div class="p-3">
@@ -82,6 +82,13 @@
   <div class="container-fluid m-0 p-0">
     <div class="row">
       <footer class="footer  bg-dark ">
+        <div>
+          <form name="chronoForm" id="chronoForm" class="text-center">
+            <input type="text" name="chronotime" id="chronotime" value="0:00:00:00"/>
+              <input type="button" id="startstop" name="startstop" value="start!"/>
+              <input type="button" id="reset" name="reset" value="reset!" onClick="chronoReset()"/>
+          </form>
+        </div>
         <p class=" text-white text-center m-2">Sarah Charef & William Touboul</p>
     </footer>
   </div>
