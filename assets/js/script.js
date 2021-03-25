@@ -139,7 +139,7 @@ function BadGuy(name, health, defence, attack, weakness, resistance) {
 }
 
 // Compteur de round
-var round = 1;
+var round = 10;
 document.getElementById("round").innerHTML = round;
 
 //Creation du méchant selon le nombre de round: 
@@ -186,10 +186,13 @@ function DeathEnemy() {
     DisplayBadGuy();
     addLife();
     addPotion();
-    var basicAttack = 30;
+    basicAttack = 30;
     document.getElementById("basicAttack").innerHTML = basicAttack;
+    document.getElementById("baseAttack").disabled = false;
     bigAttack = 10;
     document.getElementById("bigAttack").innerHTML = bigAttack;
+    document.getElementById("heavyAttack").disabled = false;
+
   }
 }
 
