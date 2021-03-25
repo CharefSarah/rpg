@@ -151,8 +151,12 @@ document.getElementById("round").innerHTML = round;
 
 //Creation du méchant selon le nombre de round: 
 function CreateBadGuy() {
-  if (round == 10 || round == 20 || round == 30) {
+  if (round == 30) {
     var badGuy = new BadGuy("Chevalier Noir", 1000, 30, 40, "none", "sword");
+  } else if(round == 20) {
+     var badGuy = new BadGuy("Araignée Géante Cracheuse De Feu",750,30,50,"none","none")
+  } else if(round ==10) {
+    var badGuy = new BadGuy("Chef des orcs",630,30,32,"none","none")
   } else {
     var badGuy = new BadGuy("Orc", 300, 10, 30, "all", "none");
   }
@@ -280,6 +284,7 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   LostLife();
   EndGame();
 });
+
 // contre attaque
 function CunterAttack() {
 
