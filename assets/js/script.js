@@ -1,3 +1,4 @@
+
 // Consctructeur objet Hero.
 function Hero(health, maxHealth, defence, attack, weakness, resistance) {
   this.health = health;
@@ -91,21 +92,27 @@ var hero = classSelectArray.forEach(element => {
       hero = new Hero(500, 500, 30, 30, "thunder", "sword");
       SetHeroValue();
       ButtonDisappear();
+      chronoStart();
       return hero;
+  
 
     } else if (element.id == "mage") {
       hero = new Hero(300, 300, 10, 40, "sword", "magic");
       document.getElementById("heroHealth").innerHTML = hero.health;
       SetHeroValue();
       ButtonDisappear();
+      chronoStart();
       return hero;
+     
 
     } else if (element.id == "rogue") {
       hero = new Hero(400, 400, 20, 35, "none", "none");
       document.getElementById("heroHealth").innerHTML = hero.health;
       SetHeroValue();
       ButtonDisappear();
+      chronoStart();
       return hero;
+      
     }
   });
 });
@@ -127,7 +134,7 @@ document.getElementById("round").innerHTML = round;
 //Creation du méchant selon le nombre de round: 
 function CreateBadGuy() {
   if (round == 10 || round == 20 || round == 30) {
-    var badGuy = new BadGuy("Dark Knight", 1000, 30, 40, "none", "sword");
+    var badGuy = new BadGuy("Chevalier Noir", 1000, 30, 40, "none", "sword");
   } else {
     var badGuy = new BadGuy("Orc", 300, 10, 30, "all", "none");
   }
@@ -168,8 +175,7 @@ function DeathEnemy() {
       document.getElementById("round").innerHTML = round;
       badGuy = CreateBadGuy();
       DisplayBadGuy();
-      addLife();
-      addPotion();
+ 
 
     }
   }
