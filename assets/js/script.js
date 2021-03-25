@@ -1,11 +1,14 @@
 // Consctructeur objet Hero.
-function Hero(health, maxHealth, defence, attack, weakness, resistance) {
+function Hero(name, health, maxHealth, defence, attack, weakness, resistance, lightAttack, bigAttack) {
+  this.name = name;
   this.health = health;
   this.maxHealth = maxHealth;
   this.defence = defence;
   this.attack = attack;
   this.weakness = weakness;
   this.resistance = resistance;
+  this.lightAttack = lightAttack;
+  this.bigAttack = bigAttack;
 }
 // vie 
 var life = 3;
@@ -13,28 +16,39 @@ var life = 3;
 window.addEventListener("load", function () {
   document.getElementById("lifeTotal").innerHTML = life;
 });
-// mort du méchant
+
+// mort du méchant 
 function DeathEnemy() {
   if (badGuy.health <= 0) {
-    confirm("l'énnemi est mort !"); {
+    confirm("l'ennemi est mort !"); {
       round++;
       document.getElementById("round").innerHTML = round;
     }
   }
 }
 // nombres d'attaques
+
 var basicAttack = 30;
 document.getElementById("basicAttack").innerHTML = basicAttack;
 
-function lostBasicAttack() {
-if (baseAttack.clicked == true) {
-  basicAttack = basicAttack -1 ;
+function LostBasicAttack() {
+  basicAttack = basicAttack - 1;
   document.getElementById("basicAttack").innerHTML = basicAttack;
-} 
+  if (basicAttack == 0) {
+    document.getElementById("baseAttack").disabled = "true";
+  }
 }
+// Nombre de grosses attaques
 var bigAttack = 10;
 document.getElementById("bigAttack").innerHTML = bigAttack;
 
+function LostBigAttack() {
+  bigAttack = bigAttack - 1;
+  document.getElementById("bigAttack").innerHTML = bigAttack;
+  if (bigAttack == 0) {
+    document.getElementById("heavyAttack").disabled = "true";
+  }
+}
 
 // Game over plus refresh de la page
 function EndGame() {
@@ -72,6 +86,10 @@ function ButtonDisappear() {
 }
 // affiche les valeurs du héro
 function SetHeroValue() {
+  document.getElementById("heroName").innerHTML = hero.name;
+  document.getElementById("basicAttackName").innerHTML = hero.lightAttack;
+  document.getElementById("bigAttackName").innerHTML = hero.bigAttack;
+
   document.getElementById("heroHealth").innerHTML = hero.health;
   health.value = hero.health;
   health.max = hero.maxHealth;
@@ -88,20 +106,20 @@ var classSelectArray = document.querySelectorAll('.classSelect');
 var hero = classSelectArray.forEach(element => {
   element.addEventListener('click', function CreateHero() {
     if (element.id == "knight") {
-      hero = new Hero(500, 500, 30, 30, "thunder", "sword");
+      hero = new Hero("Chevalier", 500, 500, 30, 30, "thunder", "sword", "Coup d'épée", "Coup de bouclier");
       SetHeroValue();
       ButtonDisappear();
       return hero;
 
     } else if (element.id == "mage") {
-      hero = new Hero(300, 300, 10, 40, "sword", "magic");
+      hero = new Hero("Mage", 300, 300, 10, 40, "sword", "magic", "Eclair", "Mur de feu");
       document.getElementById("heroHealth").innerHTML = hero.health;
       SetHeroValue();
       ButtonDisappear();
       return hero;
 
     } else if (element.id == "rogue") {
-      hero = new Hero(400, 400, 20, 35, "none", "none");
+      hero = new Hero("Rogue", 400, 400, 20, 35, "none", "none", "Attaque sournoise", "Assassinat");
       document.getElementById("heroHealth").innerHTML = hero.health;
       SetHeroValue();
       ButtonDisappear();
@@ -161,17 +179,17 @@ function DeathHero() {
 // mort du méchant
 function DeathEnemy() {
   if (badGuy.health <= 0) {
-    alert("méchant ko"); {
-      round++;
-      addLife();
-      addPotion();
-      document.getElementById("round").innerHTML = round;
-      badGuy = CreateBadGuy();
-      DisplayBadGuy();
-      addLife();
-      addPotion();
-
-    }
+    alert("méchant ko");
+    round++;
+    document.getElementById("round").innerHTML = round;
+    badGuy = CreateBadGuy();
+    DisplayBadGuy();
+    addLife();
+    addPotion();
+    var basicAttack = 30;
+    document.getElementById("basicAttack").innerHTML = basicAttack;
+    bigAttack = 10;
+    document.getElementById("bigAttack").innerHTML = bigAttack;
   }
 }
 
@@ -209,6 +227,7 @@ function Dodge() {
   dodge = Math.floor(Math.random() * 100) + 1;
   if (dodge <= 10) {
     ennemyDamage = 0;
+    console.log("Esquivé");
   } else {
     ennemyDamage = badGuy.attack;
   }
@@ -227,6 +246,7 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   Dodge();
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
+  LostBasicAttack();
   // J'appelle la fonction pour faire bouger les jauges par rapport aux changement dans les Points de vie de tout le monde
   MoveHealthBar();
   DeathHero();
@@ -243,6 +263,7 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   Dodge();
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
+  LostBigAttack();
   MoveHealthBar();
   DeathHero();
   DeathEnemy();
@@ -292,7 +313,7 @@ function addPotion() {
   document.getElementById("stockPotion").innerHTML = stockPotion;
   return stockPotion;
 }
-      // ajoute ube vie tout les  5 niveaux
+// ajoute ube vie tout les  5 niveaux
 function addLife() {
   if (round == 5 || round == 10 || round == 15 || round == 20 || round == 25 || round == 30) {
     life = life + 1;
