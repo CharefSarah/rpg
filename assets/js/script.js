@@ -52,6 +52,13 @@ function LostBigAttack() {
 }
 
 // Game over plus refresh de la page
+function winner() {
+  if (round == 31) {
+    confirm("Partie gagnée en : ");
+    document.location.reload();
+  }
+}
+// Game over plus refresh de la page
 function EndGame() {
   if (life == 0) {
     confirm("GAME OVER!");
@@ -264,9 +271,10 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   // J'appelle la fonction pour faire bouger les jauges par rapport aux changement dans les Points de vie de tout le monde
   MoveHealthBar();
   DeathHero();
-  DeathEnemy();
   LostLife();
   EndGame();
+  DeathEnemy();
+  winner();
 });
 
 
@@ -279,10 +287,12 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   document.getElementById("heroHealth").innerHTML = hero.health;
   LostBigAttack();
   MoveHealthBar();
+  EndGame();
+  LostLife();
   DeathHero();
   DeathEnemy();
-  LostLife();
-  EndGame();
+  winner();
+
 });
 
 // contre attaque
