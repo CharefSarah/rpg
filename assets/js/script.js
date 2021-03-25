@@ -7,33 +7,55 @@ function Hero(health, maxHealth, defence, attack, weakness, resistance) {
   this.weakness = weakness;
   this.resistance = resistance;
 }
-
+// vie 
 var life = 3;
 
 window.addEventListener("load", function () {
   document.getElementById("lifeTotal").innerHTML = life;
 });
-
+// mort du méchant
 function DeathEnemy() {
   if (badGuy.health <= 0) {
-    confirm("l'énnemi est mort !");{
+    confirm("l'énnemi est mort !"); {
       round++;
       document.getElementById("round").innerHTML = round;
     }
   }
 }
+// nombres d'attaques
+var basicAttack = 30;
+document.getElementById("basicAttack").innerHTML = basicAttack;
+
+function lostBasicAttack() {
+if (baseAttack.clicked == true) {
+  basicAttack = basicAttack -1 ;
+  document.getElementById("basicAttack").innerHTML = basicAttack;
+} 
+}
+var bigAttack = 10;
+document.getElementById("bigAttack").innerHTML = bigAttack;
 
 
+// Game over plus refresh de la page
+function EndGame() {
+  if (life == 0) {
+    confirm("GAME OVER!");
+    document.location.reload();
+  }
+}
+
+
+// mort du héro
 function DeathHero() {
   if (hero.health <= 0) {
     alert("héro ko");
   }
 }
-
-function LostLife(){
-  if (hero.health <=0){
+// Compteur de vie
+function LostLife() {
+  if (hero.health <= 0) {
     life = life - 1;
-    hero.health = hero.maxHealth; 
+    hero.health = hero.maxHealth;
     document.getElementById("lifeTotal").innerHTML = life;
   }
 }
@@ -42,13 +64,13 @@ let health = document.getElementById("healthBar");
 
 let badGuyHealth = document.getElementById("badGuyHealthBar");
 
-
+// fait diisparaitre le choix du héro une fois qu'il a était choisi
 function ButtonDisappear() {
   document.getElementById("knight").style.display = "none";
   document.getElementById("mage").style.display = "none";
   document.getElementById("rogue").style.display = "none";
 }
-
+// affiche les valeurs du héro
 function SetHeroValue() {
   document.getElementById("heroHealth").innerHTML = hero.health;
   health.value = hero.health;
@@ -107,11 +129,11 @@ function CreateBadGuy() {
   if (round == 10 || round == 20 || round == 30) {
     var badGuy = new BadGuy("Dark Knight", 1000, 30, 40, "none", "sword");
   } else {
-    var badGuy = new BadGuy("Orc", 300, 10, 20, "all", "none");
+    var badGuy = new BadGuy("Orc", 300, 10, 30, "all", "none");
   }
   return badGuy
 }
-
+// affiche les valeurs du méchant
 function DisplayBadGuy() {
   document.getElementById("badGuyName").innerHTML = badGuy.name;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
@@ -123,19 +145,20 @@ function DisplayBadGuy() {
   document.getElementById("badGuyResistance").innerHTML = badGuy.resistance;
 }
 
-
-window.addEventListener("load", function() {
+// création du méchant
+window.addEventListener("load", function () {
   badGuy = CreateBadGuy();
   DisplayBadGuy();
 });
 
-
+// mort du héro
 function DeathHero() {
   if (hero.health <= 0) {
     alert("héro ko");
   }
 }
 
+// mort du méchant
 function DeathEnemy() {
   if (badGuy.health <= 0) {
     alert("méchant ko"); {
@@ -145,6 +168,8 @@ function DeathEnemy() {
       document.getElementById("round").innerHTML = round;
       badGuy = CreateBadGuy();
       DisplayBadGuy();
+      addLife();
+      addPotion();
 
     }
   }
@@ -207,7 +232,7 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   DeathHero();
   DeathEnemy();
   LostLife();
-
+  EndGame();
 });
 
 
@@ -222,9 +247,9 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   DeathHero();
   DeathEnemy();
   LostLife();
-
+  EndGame();
 });
-
+// contre attaque
 function CunterAttack() {
 
   if (health = health - attackDamage) {
@@ -267,8 +292,7 @@ function addPotion() {
   document.getElementById("stockPotion").innerHTML = stockPotion;
   return stockPotion;
 }
-
-
+      // ajoute ube vie tout les  5 niveaux
 function addLife() {
   if (round == 5 || round == 10 || round == 15 || round == 20 || round == 25 || round == 30) {
     life = life + 1;
