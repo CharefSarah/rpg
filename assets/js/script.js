@@ -33,9 +33,11 @@ function DeathHero() {
 function LostLife(){
   if (hero.health <=0){
     life = life - 1;
+    hero.health = hero.maxHealth; 
     document.getElementById("lifeTotal").innerHTML = life;
   }
 }
+
 let health = document.getElementById("healthBar");
 
 let badGuyHealth = document.getElementById("badGuyHealthBar");
