@@ -36,30 +36,42 @@
             </li>
           </ul>
         </div>
+        <div>
+          <form name="chronoForm" id="chronoForm" class="text-center">
+            <input type="text" name="chronotime" id="chronotime" value="0:00:00:00" />
+            <input type="button" id="startstop" name="startstop" value="start!" />
+            <input type="button" id="reset" name="reset" value="reset!" onClick="chronoReset()" />
+          </form>
+        </div>
       </nav>
     </div>
   </div>
-  <main>
-    <div class="p-2">
-      <p>Niveau: </p><span id=round> </span> <br>
-      <p>vie: </p><span id="lifeTotal"></span> <br>
 
-      <button class="classSelect" id="knight" value="knight" onClick="chronoStart()"> Chevalier</button>
-      <button class="classSelect" id="mage" value="mage" onClick="chronoStart()"> mage</button>
-      <button class="classSelect" id="rogue" value="rogue" onClick="chronoStart()"> Voleuse</button><br>
-      <span id=round> </span>
+  <p>Niveau: <span id=round> </span> </p>
+  <p>vie: <span id="lifeTotal"></span> </p>
+
+  <button class="classSelect" id="knight" value="knight" onClick="chronoStart()"> Chevalier</button>
+  <button class="classSelect" id="mage" value="mage" onClick="chronoStart()"> Mage</button>
+  <button class="classSelect" id="rogue" value="rogue" onClick="chronoStart()"> Voleuse</button><br>
+  <span id=round> </span>
+  </div>
+  <div class="p-3">
+    Hero : <span id="heroName"></span> <br>
+    Point de vie : <span id="heroHealth"></span><br>
+    <!-- JAUGE HERO-->
+    <div class="healthBar" id="healthBar" value="1000" max="1000">
+      <div class="bar" id="bar">
+      </div>
     </div>
     <div class="p-3">
       Defense : <span id="heroDefence"></span><br>
       Attaque : <span id="heroAttack"></span><br>
-      Faiblesse : <span id="heroWeakness"></span><br>
-      Résistance : <span id="heroResistance"></span>
     </div>
     <br>
 
     <div class="text-right p-2">
       LE MECHANT : <br>
-      Nom : <span id="badGuyName"></span><br>
+      Nom : <span id="badGuyName"></span><br><br>
       Points de vie : <span id="badGuyHealth"></span><br>
       <!-- JAUGE ENNEMI -->
       <div class="badguyHealthBar pull-right" id="badguyHealthBar" value="1000" max="1000">
@@ -67,10 +79,10 @@
         </div>
       </div>
       <br>
+      <br>
       Defense : <span id="badGuyDefence"></span><br>
       Attaque : <span id="badGuyAttack"></span><br>
-      Faiblesse : <span id="badGuyWeakness"></span><br>
-      Resistance : <span id="badGuyResistance"></span>
+
     </div>
     <div id="buttons" class="text-center">
       <button id="baseAttack"> <span id="basicAttackName"> </span> <span id="basicAttack"> </span>/30</button>
@@ -80,17 +92,10 @@
       <button id="potion">Potion <span id="stockPotion"></span></button>
       <p id="potionAlert"></p>
     </div>
-  </main>
+  </div>
   <div class="container-fluid m-0 p-0">
     <div class="row m-0 p-0">
       <footer class="footer  bg-dark ">
-        <div>
-          <form name="chronoForm" id="chronoForm" class="text-center">
-            <input type="text" name="chronotime" id="chronotime" value="0:00:00:00" />
-            <input type="button" id="startstop" name="startstop" value="start!" />
-            <input type="button" id="reset" name="reset" value="reset!" onClick="chronoReset()" />
-          </form>
-        </div>
         <p class=" text-white text-center m-2">Sarah Charef & William Touboul</p>
       </footer>
     </div>
@@ -105,7 +110,7 @@
   </div>
 
   <div id="modalVictory">
-    VICTOIRE 
+    VICTOIRE
     Vous avez gagné en : <span id="victoryTime"></span>
     <button id="dismissModalVictory">Dismiss</button>
   </div>
