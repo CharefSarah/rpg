@@ -1,4 +1,3 @@
-
 // Consctructeur objet Hero.
 function Hero(name, health, maxHealth, defence, attack, weakness, resistance, lightAttack, bigAttack) {
   this.name = name;
@@ -84,7 +83,7 @@ function LostLife() {
 
 let health = document.getElementById("healthBar");
 
-let badGuyHealth = document.getElementById("badGuyHealthBar");
+let badGuyHealth = document.getElementById("badguyHealthBar");
 
 // fait diisparaitre le choix du héro une fois qu'il a était choisi
 function ButtonDisappear() {
@@ -97,10 +96,9 @@ function SetHeroValue() {
   document.getElementById("heroName").innerHTML = hero.name;
   document.getElementById("basicAttackName").innerHTML = hero.lightAttack;
   document.getElementById("bigAttackName").innerHTML = hero.bigAttack;
-
   document.getElementById("heroHealth").innerHTML = hero.health;
-  health.value = hero.health;
-  health.max = hero.maxHealth;
+  health.setAttribute("value", hero.health);
+  health.setAttribute("max",hero.maxHealth);
   document.getElementById("heroDefence").innerHTML = hero.defence;
   document.getElementById("heroAttack").innerHTML = hero.attack;
   document.getElementById("heroWeakness").innerHTML = hero.weakness;
@@ -119,7 +117,7 @@ var hero = classSelectArray.forEach(element => {
       ButtonDisappear();
       chronoStart();
       return hero;
-  
+
 
     } else if (element.id == "mage") {
       hero = new Hero("Mage", 300, 300, 10, 40, "sword", "magic", "Eclair", "Mur de feu");
@@ -128,7 +126,7 @@ var hero = classSelectArray.forEach(element => {
       ButtonDisappear();
       chronoStart();
       return hero;
-     
+
 
     } else if (element.id == "rogue") {
       hero = new Hero("Voleuse", 400, 400, 20, 35, "none", "none", "Attaque sournoise", "Assassinat");
@@ -137,15 +135,16 @@ var hero = classSelectArray.forEach(element => {
       ButtonDisappear();
       chronoStart();
       return hero;
-      
+
     }
   });
 });
 
 //Constructeur objet Méchant.
-function BadGuy(name, health, defence, attack, weakness, resistance) {
+function BadGuy(name, health, maxHealth, defence, attack, weakness, resistance) {
   this.name = name;
   this.health = health;
+  this.maxHealth = maxHealth;
   this.defence = defence;
   this.attack = attack;
   this.weakness = weakness;
@@ -159,13 +158,13 @@ document.getElementById("round").innerHTML = round;
 //Creation du méchant selon le nombre de round: 
 function CreateBadGuy() {
   if (round == 30) {
-    var badGuy = new BadGuy("Chevalier Noir", 1000, 30, 40, "none", "sword");
-  } else if(round == 20) {
-     var badGuy = new BadGuy("Araignée Géante Cracheuse De Feu",750,30,50,"none","none")
-  } else if(round ==10) {
-    var badGuy = new BadGuy("Chef des orcs",630,30,32,"none","none")
+    var badGuy = new BadGuy("Chevalier Noir", 1000, 1000, 30, 40, "none", "sword");
+  } else if (round == 20) {
+    var badGuy = new BadGuy("Araignée Géante Cracheuse De Feu", 750, 750, 30, 50, "none", "none")
+  } else if (round == 10) {
+    var badGuy = new BadGuy("Chef des orcs", 630, 630, 30, 32, "none", "none")
   } else {
-    var badGuy = new BadGuy("Orc", 300, 10, 30, "all", "none");
+    var badGuy = new BadGuy("Orc", 300, 300, 10, 30, "all", "none");
   }
   return badGuy
 }
@@ -174,7 +173,8 @@ function DisplayBadGuy() {
   document.getElementById("badGuyName").innerHTML = badGuy.name;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
   badGuyHealth.value = badGuy.health;
-  badGuyHealth.max = badGuy.health;
+  badGuyHealth.setAttribute("value",badGuy.health);
+  badGuyHealth.setAttribute("max",badGuy.health);
   document.getElementById("badGuyDefence").innerHTML = badGuy.defence;
   document.getElementById("badGuyAttack").innerHTML = badGuy.attack;
   document.getElementById("badGuyWeakness").innerHTML = badGuy.weakness;
@@ -204,7 +204,7 @@ function DeathEnemy() {
     DisplayBadGuy();
     addLife();
     addPotion();
-     basicAttack = 30;
+    basicAttack = 30;
     document.getElementById("basicAttack").innerHTML = basicAttack;
     document.getElementById("baseAttack").disabled = false;
     bigAttack = 10;
@@ -255,9 +255,18 @@ function Dodge() {
 }
 
 //Fonction pour faire bouger les jauges
-function MoveHealthBar() {
-  health.value = hero.health;
-  badGuyHealth.value = badGuy.health;
+function MoveAllyHealthBar() {
+  health.setAttribute("value", hero.health);
+  var percentHealth = (hero.health / hero.maxHealth) *100;
+  console.log(percentHealth);
+  document.getElementById("bar").style.width = percentHealth + "%";
+}
+
+function MoveEnnemyHealthBar() {
+  badGuyHealth.setAttribute("value", badGuy.health);
+  var percentHealth = (badGuy.health / badGuy.maxHealth) *100;
+  console.log(percentHealth);
+  document.getElementById("badguyBar").style.width = percentHealth + "%";
 }
 
 document.getElementById("baseAttack").addEventListener("click", function baseAttack() {
@@ -269,7 +278,8 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   document.getElementById("heroHealth").innerHTML = hero.health;
   LostBasicAttack();
   // J'appelle la fonction pour faire bouger les jauges par rapport aux changement dans les Points de vie de tout le monde
-  MoveHealthBar();
+  MoveEnnemyHealthBar();
+  setTimeout(MoveAllyHealthBar, 800);
   DeathHero();
   LostLife();
   EndGame();
@@ -286,7 +296,8 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
   LostBigAttack();
-  MoveHealthBar();
+  MoveEnnemyHealthBar();
+  setTimeout(MoveAllyHealthBar, 800);
   EndGame();
   LostLife();
   DeathHero();
@@ -322,7 +333,7 @@ document.getElementById("potion").addEventListener("click", function () {
       stockPotion--;
       document.getElementById("heroHealth").innerHTML = hero.health;
       document.getElementById("stockPotion").innerHTML = stockPotion;
-      MoveHealthBar();
+      MoveAllyHealthBar();
     } else {
       document.getElementById("potionAlert").innerHTML = "Vous n'avez pas besoin de potion !"
     }
@@ -357,57 +368,62 @@ var start = 0
 var end = 0
 var diff = 0
 var timerID = 0
-function chrono(){
-	end = new Date()
-	diff = end - start
-	diff = new Date(diff)
-	var msec = diff.getMilliseconds()
-	var sec = diff.getSeconds()
-	var min = diff.getMinutes()
-	var hr = diff.getHours()-1
-	if (min < 10){
-		min = "0" + min
-	}
-	if (sec < 10){
-		sec = "0" + sec
-	}
-	if(msec < 10){
-		msec = "00" +msec
-	}
-	else if(msec < 100){
-		msec = "0" +msec
-	}
-	document.getElementById("chronotime").value = hr + ":" + min + ":" + sec + ":" + msec
-	timerID = setTimeout("chrono()", 10)
+
+function chrono() {
+  end = new Date()
+  diff = end - start
+  diff = new Date(diff)
+  var msec = diff.getMilliseconds()
+  var sec = diff.getSeconds()
+  var min = diff.getMinutes()
+  var hr = diff.getHours() - 1
+  if (min < 10) {
+    min = "0" + min
+  }
+  if (sec < 10) {
+    sec = "0" + sec
+  }
+  if (msec < 10) {
+    msec = "00" + msec
+  } else if (msec < 100) {
+    msec = "0" + msec
+  }
+  document.getElementById("chronotime").value = hr + ":" + min + ":" + sec + ":" + msec
+  timerID = setTimeout("chrono()", 10)
 }
-function chronoStart(){
-	document.chronoForm.startstop.value = "stop!"
-	document.chronoForm.startstop.onclick = chronoStop
-	document.chronoForm.reset.onclick = chronoReset
-	start = new Date()
-	chrono()
+
+function chronoStart() {
+  document.chronoForm.startstop.value = "stop!"
+  document.chronoForm.startstop.onclick = chronoStop
+  document.chronoForm.reset.onclick = chronoReset
+  start = new Date()
+  chrono()
 }
-function chronoContinue(){
-	document.chronoForm.startstop.value = "stop!"
-	document.chronoForm.startstop.onclick = chronoStop
-	document.chronoForm.reset.onclick = chronoReset
-	start = new Date()-diff
-	start = new Date(start)
-	chrono()
+
+function chronoContinue() {
+  document.chronoForm.startstop.value = "stop!"
+  document.chronoForm.startstop.onclick = chronoStop
+  document.chronoForm.reset.onclick = chronoReset
+  start = new Date() - diff
+  start = new Date(start)
+  chrono()
 }
-function chronoReset(){
-	document.getElementById("chronotime").value = "0:00:00:000"
-	start = new Date()
+
+function chronoReset() {
+  document.getElementById("chronotime").value = "0:00:00:000"
+  start = new Date()
 }
-function chronoStopReset(){
-	document.getElementById("chronotime").value = "0:00:00:000"
-	document.chronoForm.startstop.onclick = chronoStart
+
+function chronoStopReset() {
+  document.getElementById("chronotime").value = "0:00:00:000"
+  document.chronoForm.startstop.onclick = chronoStart
 }
-function chronoStop(){
-	document.chronoForm.startstop.value = "start!"
-	document.chronoForm.startstop.onclick = chronoContinue
-	document.chronoForm.reset.onclick = chronoStopReset
-	clearTimeout(timerID)
+
+function chronoStop() {
+  document.chronoForm.startstop.value = "start!"
+  document.chronoForm.startstop.onclick = chronoContinue
+  document.chronoForm.reset.onclick = chronoStopReset
+  clearTimeout(timerID)
 }
 
 
@@ -415,3 +431,5 @@ function chronoStop(){
 // document.getElementById("potion").addEventListener("click", function () {
 // chronoStop();
 // });
+
+
