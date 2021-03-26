@@ -252,7 +252,6 @@ var hero = classSelectArray.forEach(element => {
       SetHeroValue();
       ButtonDisappear();
       displayLife();
-
       chronoStart();
       return hero;
 
@@ -263,7 +262,6 @@ var hero = classSelectArray.forEach(element => {
       SetHeroValue();
       ButtonDisappear();
       displayLife();
-
       chronoStart();
       return hero;
 
