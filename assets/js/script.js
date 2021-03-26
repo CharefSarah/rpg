@@ -91,14 +91,14 @@ window.addEventListener("load", function () {
 function ModalDeathHero() {
   document.getElementById("modalDeathHero").style.display = "block";
 }
-document.getElementById("dismissDeathHero").addEventListener("click", function() {
+document.getElementById("dismissDeathHero").addEventListener("click", function () {
   document.getElementById("modalDeathHero").style.display = "none";
 });
 
 function ModalDeathEnnemy() {
   document.getElementById("modalDeathEnnemy").style.display = "block";
 }
-document.getElementById("dismissDeathEnnemy").addEventListener("click", function() {
+document.getElementById("dismissDeathEnnemy").addEventListener("click", function () {
   document.getElementById("modalDeathEnnemy").style.display = "none";
 });
 
@@ -113,14 +113,14 @@ document.getElementById("dismissDeathEnnemy").addEventListener("click", function
 function ModalVictory() {
   chronoStop();
   console.log(chronotime.value);
-  document.getElementById("modalVictory").style.display="block";
+  document.getElementById("modalVictory").style.display = "block";
   document.getElementById("victoryTime").innerHTML = chronotime.value;
   document.getElementById("chronoForm").style.display = "none";
-  
-  
+
+
 }
-document.getElementById("dismissModalVictory").addEventListener("click",function(){
-  document.getElementById("modalVictory").style.display ="none";
+document.getElementById("dismissModalVictory").addEventListener("click", function () {
+  document.getElementById("modalVictory").style.display = "none";
   document.location.reload();
 })
 
@@ -197,7 +197,7 @@ function SetHeroValue() {
   document.getElementById("bigAttackName").innerHTML = hero.bigAttack;
   document.getElementById("heroHealth").innerHTML = hero.health;
   health.setAttribute("value", hero.health);
-  health.setAttribute("max",hero.maxHealth);
+  health.setAttribute("max", hero.maxHealth);
   document.getElementById("heroDefence").innerHTML = hero.defence;
   document.getElementById("heroAttack").innerHTML = hero.attack;
   document.getElementById("heroWeakness").innerHTML = hero.weakness;
@@ -272,8 +272,8 @@ function DisplayBadGuy() {
   document.getElementById("badGuyName").innerHTML = badGuy.name;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
   badGuyHealth.value = badGuy.health;
-  badGuyHealth.setAttribute("value",badGuy.health);
-  badGuyHealth.setAttribute("max",badGuy.health);
+  badGuyHealth.setAttribute("value", badGuy.health);
+  badGuyHealth.setAttribute("max", badGuy.health);
   document.getElementById("badGuyDefence").innerHTML = badGuy.defence;
   document.getElementById("badGuyAttack").innerHTML = badGuy.attack;
   document.getElementById("badGuyWeakness").innerHTML = badGuy.weakness;
@@ -352,16 +352,16 @@ function Dodge() {
 //Fonction pour faire bouger les jauges
 function MoveAllyHealthBar() {
   health.setAttribute("value", hero.health);
-  var percentHealth = (hero.health / hero.maxHealth) *100;
+  var percentHealth = (hero.health / hero.maxHealth) * 100;
   console.log(percentHealth);
   document.getElementById("bar").style.width = percentHealth + "%";
 }
 
 function MoveEnnemyHealthBar() {
   badGuyHealth.setAttribute("value", badGuy.health);
-  var percentHealth = (badGuy.health / badGuy.maxHealth) *100;
+  var percentHealth = (badGuy.health / badGuy.maxHealth) * 100;
   console.log(percentHealth);
-  if(badGuy.health <=0 ) {
+  if (badGuy.health <= 0) {
     percentHealth = 100;
   }
   document.getElementById("badguyBar").style.width = percentHealth + "%";
@@ -454,5 +454,3 @@ function addLife() {
     document.getElementById("lifeTotal").innerHTML = life;
   }
 }
-
-
