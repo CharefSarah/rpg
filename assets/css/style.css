@@ -1,58 +1,103 @@
-html, body{
-    padding:0;
-    margin:0;
-    width: 100%;
-    overflow-x: hidden !important;
+@font-face {
+  font-family: Basalt;
+  src: url("../font/Basalt.ttf") format("TrueType");
 }
 
-#startstop, #reset {
-    display : none !important;
+@font-face {
+  font-family: Legend;
+  src: url("../font/Legend.ttf") format("TrueType");
+}
+
+
+
+html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden !important;
+  font-family: legend !important;
+  background-image: url("../img/12.jpg");
+  background-size: cover;
+  color: rgb(255, 255, 255) !important;
+
+
+}
+
+h1 {
+  font-family: Basalt !important;
+  color: rgb(255, 255, 255) !important;
+  margin-left: 15px !important;
+}
+
+#startstop,
+#reset {
+  display: none !important;
 
 }
 
 #healthBar {
-    transition: width 1s;
+  transition: width 1s;
 }
 
 
 #healthBar {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 200px;
-    height: 20px;
-    padding: 5px;
-    background: #ddd;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    position: relative;
-  }
-  .bar {
-    background: rgb(56, 240, 111);
-    width: 100%;
-    height: 10px;
-    position: relative;
-    transition: width .5s linear;
-  }
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200px;
+  height: 20px;
+  padding: 5px;
+  background: #ddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  position: relative;
+}
 
-  #badguyHealthBar {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 200px;
-    height: 20px;
-    padding: 5px;
-    background: #ddd;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-  }
-  .badguyBar {
-    background: rgb(184, 31, 31);
-    width: 100%;
-    height: 10px;
-    position: relative;
-    transition: width .5s linear;
-  }
-  
+.bar {
+  background: rgb(2, 250, 76);
+  box-shadow: 0 5px 50px 0 rgb(2, 250, 76) inset, 0 5px 150px 0 rgb(2, 250, 76),
+  0 5px 90px 0 rgb(2, 250, 76) inset, 0 5px 25px 0 rgb(2, 250, 76);
+  width: 100%;
+  height: 10px;
+  position: relative;
+  transition: width .5s linear;
+}
+
+#badguyHealthBar {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200px;
+  height: 20px;
+  padding: 5px;
+  background: #ddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.badguyBar {
+  background: rgb(255, 0, 0);
+  box-shadow: 0 5px 50px 0 rgb(255, 0, 0) inset, 0 5px 150px 0 rgb(255, 0, 0),
+  0 5px 90px 0 rgb(255, 0, 0) inset, 0 5px 25px 0 rgb(255, 0, 0);
+border-radius: 10px;
+  width: 100%;
+  height: 10px;
+  position: relative;
+  transition: width .5s linear;
+}
+
+button {
+  color: #000 !important;
+  background-color: rgb(224, 223, 223);
+  border-style: inset;
+  border-radius: 5px;
+}
