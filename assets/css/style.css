@@ -14,7 +14,7 @@ html, body{
     transition: width 1s;
 }
 
-
+/* Jauge de vie du hero */ 
 #healthBar {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -36,6 +36,7 @@ html, body{
     transition: width .5s linear;
   }
 
+  /* Jauge de vie Ennemi */ 
   #badguyHealthBar {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -56,3 +57,36 @@ html, body{
     transition: width .5s linear;
   }
   
+
+
+
+
+  #modalDeathHero {
+    z-index: 7;
+    text-align : center;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    background-color : red;
+    color : pink;
+    display : none;
+  }
+
+  #modalDeathEnnemy {
+    z-index: 7;
+    text-align : center;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    background-color : red;
+    color : pink;
+    display : none;
+  }

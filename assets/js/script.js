@@ -17,15 +17,23 @@ window.addEventListener("load", function () {
   document.getElementById("lifeTotal").innerHTML = life;
 });
 
-// mort du méchant 
-function DeathEnemy() {
-  if (badGuy.health <= 0) {
-    confirm("l'ennemi est mort !"); {
-      round++;
-      document.getElementById("round").innerHTML = round;
-    }
-  }
+
+
+function ModalDeathHero() {
+  document.getElementById("modalDeathHero").style.display = "block";
 }
+document.getElementById("dismissDeathHero").addEventListener("click", function() {
+  document.getElementById("modalDeathHero").style.display = "none";
+});
+
+function ModalDeathEnnemy() {
+  document.getElementById("modalDeathEnnemy").style.display = "block";
+}
+document.getElementById("dismissDeathEnnemy").addEventListener("click", function() {
+  document.getElementById("modalDeathEnnemy").style.display = "none";
+});
+
+
 // nombres d'attaques
 
 var basicAttack = 30;
@@ -69,9 +77,10 @@ function EndGame() {
 // mort du héro
 function DeathHero() {
   if (hero.health <= 0) {
-    alert("héro ko");
+    ModalDeathHero();
   }
 }
+
 // Compteur de vie
 function LostLife() {
   if (hero.health <= 0) {
@@ -162,7 +171,7 @@ function CreateBadGuy() {
   } else if (round == 20) {
     var badGuy = new BadGuy("Araignée Géante Cracheuse De Feu", 750, 750, 30, 50, "none", "none")
   } else if (round == 10) {
-    var badGuy = new BadGuy("Chef des orcs", 630, 630, 30, 32, "none", "none")
+    var badGuy = new BadGuy("Roi des orcs", 630, 630, 30, 32, "none", "none")
   } else {
     var badGuy = new BadGuy("Orc", 300, 300, 10, 30, "all", "none");
   }
@@ -187,20 +196,16 @@ window.addEventListener("load", function () {
   DisplayBadGuy();
 });
 
-// mort du héro
-function DeathHero() {
-  if (hero.health <= 0) {
-    alert("héro ko");
-  }
-}
 
 // mort du méchant
 function DeathEnemy() {
   if (badGuy.health <= 0) {
-    alert("méchant ko");
+    ModalDeathEnnemy();
     round++;
     document.getElementById("round").innerHTML = round;
     badGuy = CreateBadGuy();
+    badGuy.health = badGuy.maxHealth
+
     DisplayBadGuy();
     addLife();
     addPotion();
@@ -266,6 +271,9 @@ function MoveEnnemyHealthBar() {
   badGuyHealth.setAttribute("value", badGuy.health);
   var percentHealth = (badGuy.health / badGuy.maxHealth) *100;
   console.log(percentHealth);
+  if(badGuy.health <=0 ) {
+    percentHealth = 100;
+  }
   document.getElementById("badguyBar").style.width = percentHealth + "%";
 }
 
