@@ -46,7 +46,7 @@ h1 {
   transition: width 1s;
 }
 
-
+/* Jauge de vie du hero */ 
 #healthBar {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

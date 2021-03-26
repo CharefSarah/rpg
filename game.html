@@ -40,15 +40,22 @@
       </nav>
     </div>
   </div>
-  <main>
-    <div class="p-2">
-      <p>Niveau: </p><span id=round> </span> <br>
-      <p>vie: </p><span id="lifeTotal"></span> <br>
+  <div class="p-2">
+    <p>Niveau: </p><span id=round> </span> <br>
+    <p>vie: </p><span id="lifeTotal"></span> <br>
 
-      <button class="classSelect" id="knight" value="knight" onClick="chronoStart()"> Chevalier</button>
-      <button class="classSelect" id="mage" value="mage" onClick="chronoStart()"> mage</button>
-      <button class="classSelect" id="rogue" value="rogue" onClick="chronoStart()"> Voleuse</button><br>
-      <span id=round> </span>
+    <button class="classSelect" id="knight" value="knight" onClick="chronoStart()"> Chevalier</button>
+    <button class="classSelect" id="mage" value="mage" onClick="chronoStart()"> Mage</button>
+    <button class="classSelect" id="rogue" value="rogue" onClick="chronoStart()"> Voleuse</button><br>
+    <span id=round> </span>
+  </div>
+  <div class="p-3">
+    Hero : <span id="heroName"></span> <br>
+    Point de vie : <span id="heroHealth"></span><br>
+    <!-- JAUGE HERO-->
+    <div class="healthBar" id="healthBar" value="1000" max="1000">
+      <div class="bar" id="bar">
+      </div>
     </div>
     <div class="p-3">
       Hero : <span id="heroName"></span> <br><br>
@@ -110,6 +117,17 @@
     </div>
   </div>
 
+  <div id="modalDeathHero">Votre heros est mourru
+    <button id="dismissDeathHero">Dismiss</button>
+  </div>
+
+  <div id="modalDeathEnnemy">Vous avez vaincu votre adversaire
+    <button id="dismissDeathEnnemy">Dismiss</button>
+  </div>
+
+
+
+  
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
