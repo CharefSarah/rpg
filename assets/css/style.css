@@ -23,7 +23,7 @@ body {
   width: 100%;
   overflow-x: hidden !important;
   font-family: legend !important;
-  background-image: url("../img/12.jpg");
+  background-image: url("../img/10.jpg");
   background-size: cover;
   color: rgb(255, 255, 255) !important;
 
@@ -100,4 +100,48 @@ button {
   background-color: rgb(224, 223, 223);
   border-style: inset;
   border-radius: 5px;
+}
+#modalDeathHero {
+  z-index: 7;
+  text-align : center;
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  width:30em;
+  height:18em;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+  background-color : red;
+  color : pink;
+  display : none !important;
+}
+
+#modalDeathEnnemy {
+  z-index: 7;
+  text-align : center;
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  width:30em;
+  height:18em;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+  background-color : red;
+  color : pink;
+  display : none;
+}
+
+#modalVictory {
+  z-index: 7;
+  text-align : center;
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  width:30em;
+  height:18em;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+  background-color : red;
+  color : pink;
+  display : none;
 }
