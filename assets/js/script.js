@@ -82,6 +82,9 @@ function Hero(name, health, maxHealth, defence, attack, weakness, resistance, li
 // vie 
 var life = 3;
 
+
+
+
 window.addEventListener("load", function () {
   document.getElementById("lifeTotal").innerHTML = life;
 });
@@ -171,10 +174,35 @@ function DeathHero() {
   }
 }
 
+function displayLife() {
+  for (let i = 0; i < 9; i++) {
+    var heart = "heart" + i;
+    document.getElementById(heart).style.display = "none";
+  }
+  for (let i = 0; i < life; i++) {
+    var heart = "heart" + i;
+    document.getElementById(heart).style.display = "inline";
+    console.log(heart);
+
+  }
+}
+
+
+
+function addLife() {
+  if (round == 5 || round == 10 || round == 15 || round == 20 || round == 25 || round == 30) {
+    life = life + 1;
+    displayLife();
+
+    document.getElementById("lifeTotal").innerHTML = life;
+  }
+}
+
 // Compteur de vie
 function LostLife() {
   if (hero.health <= 0) {
     life = life - 1;
+    displayLife();
     hero.health = hero.maxHealth;
     document.getElementById("lifeTotal").innerHTML = life;
   }
@@ -183,6 +211,7 @@ function LostLife() {
 let health = document.getElementById("healthBar");
 
 let badGuyHealth = document.getElementById("badguyHealthBar");
+
 
 // fait diisparaitre le choix du héro une fois qu'il a était choisi
 function ButtonDisappear() {
@@ -212,6 +241,7 @@ var hero = classSelectArray.forEach(element => {
       hero = new Hero("Chevalier", 500, 500, 30, 30, "thunder", "sword", "Coup d'épée", "Coup de bouclier");
       SetHeroValue();
       ButtonDisappear();
+      displayLife();
       chronoStart();
       return hero;
 
@@ -221,6 +251,8 @@ var hero = classSelectArray.forEach(element => {
       document.getElementById("heroHealth").innerHTML = hero.health;
       SetHeroValue();
       ButtonDisappear();
+      displayLife();
+
       chronoStart();
       return hero;
 
@@ -230,12 +262,17 @@ var hero = classSelectArray.forEach(element => {
       document.getElementById("heroHealth").innerHTML = hero.health;
       SetHeroValue();
       ButtonDisappear();
+      displayLife();
+
       chronoStart();
       return hero;
 
     }
   });
 });
+
+
+
 
 //Constructeur objet Méchant.
 function BadGuy(name, health, maxHealth, defence, attack, weakness, resistance) {
@@ -443,9 +480,3 @@ function addPotion() {
   return stockPotion;
 }
 // ajoute ube vie tout les  5 niveaux
-function addLife() {
-  if (round == 5 || round == 10 || round == 15 || round == 20 || round == 25 || round == 30) {
-    life = life + 1;
-    document.getElementById("lifeTotal").innerHTML = life;
-  }
-}
