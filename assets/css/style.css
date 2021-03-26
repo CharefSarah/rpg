@@ -32,6 +32,18 @@ body {
 
 }
 
+#body1 {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden !important;
+  font-family: legend !important;
+  background-size: cover;
+  color: rgb(255, 255, 255) !important;
+  background: rgb(17, 10, 31) !important;
+}
+
 h1 {
   font-family: Basalt !important;
   color: rgb(255, 255, 255) !important;
@@ -181,4 +193,8 @@ input {
     display : none;
     color : red;
     font-size : 18px;
+}
+
+.jumbotron {
+  background:transparent !important;
 }
