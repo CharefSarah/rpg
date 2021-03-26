@@ -151,3 +151,10 @@ button {
 #chronoForm {
     color: black;
 }
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}

@@ -200,8 +200,6 @@ function SetHeroValue() {
   health.setAttribute("max", hero.maxHealth);
   document.getElementById("heroDefence").innerHTML = hero.defence;
   document.getElementById("heroAttack").innerHTML = hero.attack;
-  document.getElementById("heroWeakness").innerHTML = hero.weakness;
-  document.getElementById("heroResistance").innerHTML = hero.resistance;
   console.log(hero);
 }
 
@@ -276,8 +274,6 @@ function DisplayBadGuy() {
   badGuyHealth.setAttribute("max", badGuy.health);
   document.getElementById("badGuyDefence").innerHTML = badGuy.defence;
   document.getElementById("badGuyAttack").innerHTML = badGuy.attack;
-  document.getElementById("badGuyWeakness").innerHTML = badGuy.weakness;
-  document.getElementById("badGuyResistance").innerHTML = badGuy.resistance;
 }
 
 // création du méchant
@@ -295,7 +291,6 @@ function DeathEnemy() {
     document.getElementById("round").innerHTML = round;
     badGuy = CreateBadGuy();
     badGuy.health = badGuy.maxHealth
-
     DisplayBadGuy();
     addLife();
     addPotion();
