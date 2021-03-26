@@ -46,13 +46,14 @@
       </nav>
     </div>
   </div>
-  <div class="p-2">
-    <p>Niveau: <span id=round> </span> Vie: <span id="lifeTotal"></span> </p>
 
-    <button class="classSelect" id="knight" value="knight" onClick="chronoStart()"> Chevalier</button>
-    <button class="classSelect" id="mage" value="mage" onClick="chronoStart()"> Mage</button>
-    <button class="classSelect" id="rogue" value="rogue" onClick="chronoStart()"> Voleuse</button><br>
-    <span id=round> </span>
+  <p>Niveau: <span id=round> </span> </p>
+  <p>vie: <span id="lifeTotal"></span> </p>
+
+  <button class="classSelect" id="knight" value="knight" onClick="chronoStart()"> Chevalier</button>
+  <button class="classSelect" id="mage" value="mage" onClick="chronoStart()"> Mage</button>
+  <button class="classSelect" id="rogue" value="rogue" onClick="chronoStart()"> Voleuse</button><br>
+  <span id=round> </span>
   </div>
   <div class="p-3">
     Hero : <span id="heroName"></span> <br>
@@ -65,8 +66,6 @@
     <div class="p-3">
       Defense : <span id="heroDefence"></span><br>
       Attaque : <span id="heroAttack"></span><br>
-      Faiblesse : <span id="heroWeakness"></span><br>
-      Résistance : <span id="heroResistance"></span>
     </div>
     <br>
 
@@ -80,10 +79,10 @@
         </div>
       </div>
       <br>
+      <br>
       Defense : <span id="badGuyDefence"></span><br>
       Attaque : <span id="badGuyAttack"></span><br>
-      Faiblesse : <span id="badGuyWeakness"></span><br>
-      Resistance : <span id="badGuyResistance"></span>
+
     </div>
     <div id="buttons" class="text-center">
       <button id="baseAttack"> <span id="basicAttackName"> </span> <span id="basicAttack"> </span>/30</button>
@@ -93,38 +92,38 @@
       <button id="potion">Potion <span id="stockPotion"></span></button>
       <p id="potionAlert"></p>
     </div>
-    </main>
-    <div class="container-fluid m-0 p-0">
-      <div class="row m-0 p-0">
-        <footer class="footer  bg-dark ">
-          <p class=" text-white text-center m-2">Sarah Charef & William Touboul</p>
-        </footer>
-      </div>
+  </div>
+  <div class="container-fluid m-0 p-0">
+    <div class="row m-0 p-0">
+      <footer class="footer  bg-dark ">
+        <p class=" text-white text-center m-2">Sarah Charef & William Touboul</p>
+      </footer>
     </div>
+  </div>
 
-    <div id="modalDeathHero">Votre heros est mourru
-      <button id="dismissDeathHero">Dismiss</button>
-    </div>
+  <div id="modalDeathHero">Votre heros est mourru
+    <button id="dismissDeathHero">Dismiss</button>
+  </div>
 
-    <div id="modalDeathEnnemy">Vous avez vaincu votre adversaire
-      <button id="dismissDeathEnnemy">Dismiss</button>
-    </div>
+  <div id="modalDeathEnnemy">Vous avez vaincu votre adversaire
+    <button id="dismissDeathEnnemy">Dismiss</button>
+  </div>
 
-    <div id="modalVictory">
-      VICTOIRE
-      Vous avez gagné en : <span id="victoryTime"></span>
-      <button id="dismissModalVictory">Dismiss</button>
-    </div>
+  <div id="modalVictory">
+    VICTOIRE
+    Vous avez gagné en : <span id="victoryTime"></span>
+    <button id="dismissModalVictory">Dismiss</button>
+  </div>
 
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="assets/js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="assets/js/script.js"></script>
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
