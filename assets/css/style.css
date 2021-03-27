@@ -97,17 +97,17 @@ h1 {
   background-color: white;
   color: black;
   display: none;
-  border : 1px black solid;
-  border-radius : 5px;
+  border: 1px black solid;
+  border-radius: 5px;
 }
 
 #modalDeathHeroTitle {
-  font-family : Basalt;
-  font-size : 36px;
+  font-family: Basalt;
+  font-size: 36px;
 }
 
 #modalDeathHeroText {
-  font-size : 20px;
+  font-size: 20px;
 
 }
 
@@ -126,17 +126,19 @@ h1 {
   background-color: white;
   color: black;
   display: none;
-  border : 1px black solid;
-  border-radius : 5px;
+  border: 1px black solid;
+  border-radius: 5px;
 }
+
 #modalDeathEnnemyTitle {
-  font-family : Basalt;
-  font-size : 36px;
+  font-family: Basalt;
+  font-size: 36px;
 }
 
 #modalDeathEnnemyText {
-  font-size : 20px;
+  font-size: 20px;
 }
+
 #modalVictory {
   z-index: 7;
   text-align: center;
@@ -152,19 +154,21 @@ h1 {
   background-color: white;
   color: black;
   display: none;
-  border : 1px black solid;
-  border-radius : 5px;
+  border: 1px black solid;
+  border-radius: 5px;
 }
+
 #modalVictoryTitle {
-  font-family : Basalt;
-  font-size : 36px;
+  font-family: Basalt;
+  font-size: 36px;
 }
 
 #modalVictoryText {
-  font-size : 20px;
+  font-size: 20px;
 }
+
 #victoryTime {
-  font-weight : bold;
+  font-weight: bold;
 }
 
 /* Jauge de vie Ennemi */
@@ -194,7 +198,7 @@ button {
   border-radius: 5px;
   margin: 5px;
   margin-bottom: 10px;
-  border:none;
+  border: none;
 }
 
 
@@ -202,8 +206,8 @@ button {
 input {
   color: rgb(255, 255, 255);
   background: rgb(17, 10, 31) !important;
-  border:none;
- 
+  border: none;
+
 }
 
 
@@ -222,64 +226,64 @@ input {
 }
 
 .fa-heart {
-    display : none;
-    color : red;
-    font-size : 18px;
+  display: none;
+  color: red;
+  font-size: 18px;
 
 }
 
 .jumbotron {
-  background:transparent !important;
+  background: transparent !important;
 }
-.hero{
+
+.hero {
   background: rgba(17, 10, 31, 0.822) !important;
-  margin: 20px; 
+  margin: 20px;
   border-radius: 5px;
   height: 180px;
 }
 
 .badguy {
   background: rgba(17, 10, 31, 0.822) !important;
-  margin: 20px; 
+  margin: 20px;
   border-radius: 5px;
   height: 180px;
-  margin-top : 40px;
-  position : absolute !important;
-  right : 0;
-  margin-bottom : 150px !important;
+  margin-top: 40px;
+  position: absolute !important;
+  right: 0;
+  margin-bottom: 150px !important;
 
 }
 
 @media (max-width: 760px) {
-  .hero{
-    margin-left : 0;
-    padding-left : 15% !important;
-    width : auto;
-    border-radius : 0 5px 5px 0;
+  .hero {
+    margin-left: 0;
+    padding-left: 15% !important;
+    width: auto;
+    border-radius: 0 5px 5px 0;
   }
 
   .badguy {
-    margin-right : 0;
-    padding-right : 15% !important;
-    width : auto;
-    border-radius : 5px 0 0 5px;
-    margin-bottom : 350px !important;
+    margin-right: 0;
+    border-radius: 5px 0 0 5px;
+    margin-bottom: 350px !important;
+    position: fixed;
   }
 }
 
-.card{
-  background:transparent !important;
+.card {
+  background: transparent !important;
 }
 
 
 #announcements {
-  background : rgb(17, 10, 31) !important;
-  color : white;
-  height : 250px;
+  background: rgb(17, 10, 31) !important;
+  color: white;
+  height: 250px;
   overflow-x: hidden !important;
-  width : 500px;
-  border-radius : 5px;
-  border : 1px black solid;
+  width: 500px;
+  border-radius: 5px;
+  border: 1px black solid;
   line-height: 150%;
 
 }
