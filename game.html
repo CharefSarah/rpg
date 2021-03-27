@@ -51,19 +51,7 @@
   </div>
 
 
-  <p class="m-3">Niveau: <span id=round></span></p>
-  <p class="m-3">Vie:
-    <i id="heart0" class="fas fa-heart"></i>
-    <i id="heart1" class="fas fa-heart"></i>
-    <i id="heart2" class="fas fa-heart"></i>
-    <i id="heart3" class="fas fa-heart"></i>
-    <i id="heart4" class="fas fa-heart"></i>
-    <i id="heart5" class="fas fa-heart"></i>
-    <i id="heart6" class="fas fa-heart"></i>
-    <i id="heart7" class="fas fa-heart"></i>
-    <i id="heart8" class="fas fa-heart"></i>
-    <i id="heart9" class="fas fa-heart"></i>
-  </p>
+  <p class="choice m-9 ">Niveau:<span id=round></span></p>
   <div class="container-fluid ">
     <div class="row">
       <div id="buttons" class="col-3 d-flex  justify-content-center mx-auto p-3 m-3">
@@ -79,12 +67,25 @@
       </div>
     </div>
   </div>
+  <main id="d2">
   <span id=round> </span>
   </div>
   <div class="container-fluid ">
     <div class="row">
       <div class="hero col-md-2 col-sm-2 ">
         <div class=" p-3">
+          <p class="m-3">Vie:
+            <i id="heart0" class="fas fa-heart"></i>
+            <i id="heart1" class="fas fa-heart"></i>
+            <i id="heart2" class="fas fa-heart"></i>
+            <i id="heart3" class="fas fa-heart"></i>
+            <i id="heart4" class="fas fa-heart"></i>
+            <i id="heart5" class="fas fa-heart"></i>
+            <i id="heart6" class="fas fa-heart"></i>
+            <i id="heart7" class="fas fa-heart"></i>
+            <i id="heart8" class="fas fa-heart"></i>
+            <i id="heart9" class="fas fa-heart"></i>
+          </p>
           Hero : <span id="heroName"></span> <br>
           Point de vie : <span id="heroHealth"></span><br>
           <!-- JAUGE HERO-->
@@ -92,18 +93,10 @@
             <div class="bar" id="bar">
             </div>
           </div>
-          <div class="p-3">
-            Defense : <span id="heroDefence"></span><br>
-            Attaque : <span id="heroAttack"></span><br>
-          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <br>
 
-  <div class="container-fluid  justify-content-right">
-    <div class="row">
+
       <div class="badguy col-md-2 col-sm-2 m-md-3 m-sm-0 mb-sm-3">
         <div class="text-right p-2">
           LE MECHANT : <br>
@@ -114,15 +107,12 @@
             <div class="badguyBar" id="badguyBar">
             </div>
           </div>
-          <br>
-          <br>
-          Defense : <span id="badGuyDefence"></span><br>
-          Attaque : <span id="badGuyAttack"></span><br>
         </div>
       </div>
     </div>
   </div>
-  <br>                                                                                                                                                                                                                                                                                                              
+  <br>
+
 
 
   <div id="buttons" class="text-center">
@@ -133,12 +123,12 @@
     <button id="potion">Potion <span id="stockPotion"></span></button>
     <p id="potionAlert"></p>
 
-    <div id="announcements" class="m-3"></div>
-
+    <div id="announcements" class="m-3 m-auto"></div>
+  </main>
 
   </div>
 
-  <div class="container-fluid p-0">
+  <div class="container-fluid p-0 fixed-bottom">
     <div class="row m-0 p-0">
       <footer class="footer  bg-dark ">
         <p class=" text-white text-center "> © Sarah Charef & William Touboul</p>
@@ -146,7 +136,7 @@
     </div>
   </div>
 
-  
+
   <div id="modalDeathEnnemy">
     <h2 id="modalDeathEnnemyTitle">Bien joué !</h2>
     <p id="modalDeathEnnemyText">Vous avez vaincu un des sbires de Void. <br>Continuez comme ca !</p>
@@ -155,7 +145,8 @@
 
   <div id="modalDeathHero">
     <h2 id="modalDeathHeroTitle">Dommage...</h2>
-    <p id="modalDeathHeroText">Vous avez été vaincu par les forces de Void, mais il vous reste une chance ! <br> Retournez au combat Shield-bearer ! </p>
+    <p id="modalDeathHeroText">Vous avez été vaincu par les forces de Void, mais il vous reste une chance ! <br>
+      Retournez au combat Shield-bearer ! </p>
     <button id="dismissDeathHero">Continuer</button>
   </div>
 
