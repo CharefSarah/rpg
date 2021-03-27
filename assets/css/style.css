@@ -231,6 +231,10 @@ input {
     padding-right : 15% !important;
     width : auto;
     border-radius : 5px 0 0 5px;
-    margin-bottom : 150px;
+    margin-bottom : 350px !important;
   }
+}
+
+.card{
+  background:transparent !important;
 }
