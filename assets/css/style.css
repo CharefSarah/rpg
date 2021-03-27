@@ -305,3 +305,8 @@ html::-webkit-scrollbar-thumb {
     bottom:0;
   }
 }
+
+
+#heroName {
+  font-size : 36px;
+}
