@@ -85,9 +85,9 @@ var life = 3;
 
 
 
-window.addEventListener("load", function () {
-  document.getElementById("lifeTotal").innerHTML = life;
-});
+// window.addEventListener("load", function () {
+//   document.getElementById("lifeTotal").innerHTML = life;
+// });
 
 
 
