@@ -52,9 +52,7 @@
     </div>
   </div>
 
-  <p>Niveau:
-
-    <span id=round> </span> </p>
+  <p>Niveau:<span id=round></span></p>
   <p>Vie:
     <i id="heart0" class="fas fa-heart"></i>
     <i id="heart1" class="fas fa-heart"></i>
@@ -66,39 +64,33 @@
     <i id="heart7" class="fas fa-heart"></i>
     <i id="heart8" class="fas fa-heart"></i>
     <i id="heart9" class="fas fa-heart"></i>
-    <p>
-      <div class="container-fluid ">
-        <div class="row">
-          <div id="buttons" class="col-3 d-flex  justify-content-center mx-auto p-3 m-3">
-            <button class="classSelect p-3" id="knight" value="knight" onClick="chronoStart()">
-              Chevalier</button>
-          </div>
-          <div id="buttons" class="col-3 d-flex  justify-content-center mx-auto p-3 m-3">
-            <button class="classSelect p-3" id="mage" value="mage" onClick="chronoStart()"> Mage</button>
-          </div>
-          <div id="buttons" class="col-3 d-flex  justify-content-center mx-auto p-3 m-3">
-            <button class="classSelect p-3" id="rogue" value="rogue" onClick="chronoStart()">
-              Voleuse</button><br>
-          </div>
-        </div>
+  </p>
+  <div class="container-fluid ">
+    <div class="row">
+      <div id="buttons" class="col-3 d-flex  justify-content-center mx-auto p-3 m-3">
+        <button class="classSelect p-3" id="knight" value="knight" onClick="chronoStart()">
+          Chevalier</button>
       </div>
-      <span id=round> </span>
+      <div id="buttons" class="col-3 d-flex  justify-content-center mx-auto p-3 m-3">
+        <button class="classSelect p-3" id="mage" value="mage" onClick="chronoStart()"> Mage</button>
       </div>
-      <div class="container-fluid ">
-        <div class="row">
-          <div class="hero col-md-2 col-sm-2 ">
-            <div class=" p-3">
-              Hero : <span id="heroName"></span> <br>
-              Point de vie : <span id="heroHealth"></span><br>
-              <!-- JAUGE HERO-->
-              <div class="healthBar" id="healthBar" value="1000" max="1000">
-                <div class="bar" id="bar">
-                </div>
-              </div>
-              <div class="p-3">
-                Defense : <span id="heroDefence"></span><br>
-                Attaque : <span id="heroAttack"></span><br>
-              </div>
+      <div id="buttons" class="col-3 d-flex  justify-content-center mx-auto p-3 m-3">
+        <button class="classSelect p-3" id="rogue" value="rogue" onClick="chronoStart()">
+          Voleuse</button><br>
+      </div>
+    </div>
+  </div>
+  <span id=round> </span>
+  </div>
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="hero col-md-2 col-sm-2 ">
+        <div class=" p-3">
+          Hero : <span id="heroName"></span> <br>
+          Point de vie : <span id="heroHealth"></span><br>
+          <!-- JAUGE HERO-->
+          <div class="healthBar" id="healthBar" value="1000" max="1000">
+            <div class="bar" id="bar">
             </div>
           </div>
           <div class="p-3">
@@ -107,24 +99,20 @@
           </div>
         </div>
       </div>
-      <br>
+    </div>
+  </div>
+  <br>
 
-      <div class="container-fluid  justify-content-right ">
-        <div class="row">
-          <div class="badguy col-md-2 col-sm-2 m-3">
-            <div class="text-right p-2">
-              LE MECHANT : <br>
-              Nom : <span id="badGuyName"></span><br><br>
-              Points de vie : <span id="badGuyHealth"></span>
-              <!-- JAUGE ENNEMI -->
-              <div class="badguyHealthBar pull-right" id="badguyHealthBar" value="1000" max="1000">
-                <div class="badguyBar" id="badguyBar">
-                </div>
-              </div>
-              <br>
-              <br>
-              Defense : <span id="badGuyDefence"></span><br>
-              Attaque : <span id="badGuyAttack"></span><br>
+  <div class="container-fluid  justify-content-right ">
+    <div class="row">
+      <div class="badguy col-md-2 col-sm-2 m-3 ">
+        <div class="text-right p-2">
+          LE MECHANT : <br>
+          Nom : <span id="badGuyName"></span><br><br>
+          Points de vie : <span id="badGuyHealth"></span>
+          <!-- JAUGE ENNEMI -->
+          <div class="badguyHealthBar pull-right" id="badguyHealthBar" value="1000" max="1000">
+            <div class="badguyBar" id="badguyBar">
             </div>
           </div>
           <br>
@@ -133,48 +121,49 @@
           Attaque : <span id="badGuyAttack"></span><br>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div id="buttons" class="text-center">
-        <button id="baseAttack"> <span id="basicAttackName"> </span> <span id="basicAttack"> </span>/30</button>
+  <div id="buttons" class="text-center">
+    <button id="baseAttack"> <span id="basicAttackName"> </span> <span id="basicAttack"> </span>/30</button>
 
-        <button id="heavyAttack"> <span id="bigAttackName"> </span> <span id="bigAttack"> </span>/10</button>
+    <button id="heavyAttack"> <span id="bigAttackName"> </span> <span id="bigAttack"> </span>/10</button>
 
-        <button id="potion">Potion <span id="stockPotion"></span></button>
-        <p id="potionAlert"></p>
-      </div>
-      </div>
+    <button id="potion">Potion <span id="stockPotion"></span></button>
+    <p id="potionAlert"></p>
+  </div>
 
-      <div class="container-fluid m-0 p-0">
-        <div class="row m-0 p-0">
-          <footer class="footer  bg-dark ">
-            <p class=" text-white text-center "> © Sarah Charef & William Touboul</p>
-        </div>
-        </footer>
+  <div class="container-fluid m-0 p-0">
+    <div class="row m-0 p-0">
+      <footer class="footer  bg-dark ">
+        <p class=" text-white text-center "> © Sarah Charef & William Touboul</p>
+      </footer>
+    </div>
+  </div>
 
+  <div id="modalDeathHero">Votre heros est mourru
+    <button id="dismissDeathHero">Dismiss</button>
+  </div>
 
-        <div id="modalDeathHero">Votre heros est mourru
-          <button id="dismissDeathHero">Dismiss</button>
-        </div>
+  <div id="modalDeathEnnemy">Vous avez vaincu votre adversaire
+    <button id="dismissDeathEnnemy">Dismiss</button>
+  </div>
 
-        <div id="modalDeathEnnemy">Vous avez vaincu votre adversaire
-          <button id="dismissDeathEnnemy">Dismiss</button>
-        </div>
-
-        <div id="modalVictory">
-          VICTOIRE
-          Vous avez gagné en : <span id="victoryTime"></span>
-          <button id="dismissModalVictory">Dismiss</button>
-        </div>
-
+  <div id="modalVictory">
+    VICTOIRE
+    Vous avez gagné en : <span id="victoryTime"></span>
+    <button id="dismissModalVictory">Dismiss</button>
+  </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.0.js"
-          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="assets/js/script.js"></script>
 
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="assets/js/script.js"></script>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
