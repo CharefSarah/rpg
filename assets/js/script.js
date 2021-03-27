@@ -270,7 +270,7 @@ var classSelectArray = document.querySelectorAll('.classSelect');
 var hero = classSelectArray.forEach(element => {
   element.addEventListener('click', function CreateHero() {
     if (element.id == "knight") {
-      hero = new Hero("Chevalier", 500, 500, 30, 30, "thunder", "sword", "Coup d'épée", "Coup de bouclier");
+      hero = new Hero("Rodric", 500, 500, 30, 30, "thunder", "sword", "Coup d'épée", "Coup de bouclier");
       SetHeroValue();
       ButtonDisappear();
       displayLife();
@@ -281,7 +281,7 @@ var hero = classSelectArray.forEach(element => {
 
 
     } else if (element.id == "mage") {
-      hero = new Hero("Mage", 300, 300, 10, 40, "sword", "magic", "Eclair", "Mur de feu");
+      hero = new Hero("Zorrun", 300, 300, 10, 40, "sword", "magic", "Eclair", "Mur de feu");
       document.getElementById("heroHealth").innerHTML = hero.health;
       SetHeroValue();
       ButtonDisappear();
@@ -293,7 +293,7 @@ var hero = classSelectArray.forEach(element => {
 
 
     } else if (element.id == "rogue") {
-      hero = new Hero("Voleuse", 400, 400, 20, 35, "none", "none", "Attaque sournoise", "Assassinat");
+      hero = new Hero("Urim", 400, 400, 20, 35, "none", "none", "Attaque sournoise", "Assassinat");
       document.getElementById("heroHealth").innerHTML = hero.health;
       SetHeroValue();
       ButtonDisappear();

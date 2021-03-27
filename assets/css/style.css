@@ -310,6 +310,10 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
-.choice{
+
+#heroName {
+  font-size : 36px;
+}
+.choice {
   margin-bottom: 20px !important;
 }
