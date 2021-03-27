@@ -427,6 +427,8 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   DeathEnemy();
   winner();
   background();
+
+
 });
 
 
@@ -446,6 +448,7 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   DeathEnemy();
   winner();
   background();
+
 
 });
 
