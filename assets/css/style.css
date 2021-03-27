@@ -24,7 +24,7 @@ body {
   width: 100%;
   height: 100vh;
   overflow-x: hidden !important;
-  font-family: legend !important;
+  font-family: 'Roboto', sans-serif;
   background-image: url("../img/3.png");
   background-size: cover;
   color: rgb(255, 255, 255) !important;
@@ -38,7 +38,7 @@ body {
   width: 100%;
   height: 100vh;
   overflow-x: hidden !important;
-  font-family: legend !important;
+  font-family: 'Roboto', sans-serif;
   background-size: cover;
   color: rgb(255, 255, 255) !important;
   background: rgb(17, 10, 31) !important;
@@ -197,4 +197,10 @@ input {
 
 .jumbotron {
   background:transparent !important;
+}
+.hero{
+  background: rgba(17, 10, 31, 0.822) !important;
+  margin: 20px; 
+  border-radius: 5px;
+  height: 300px;
 }
