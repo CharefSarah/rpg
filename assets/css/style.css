@@ -22,7 +22,7 @@ body {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow-x: hidden !important;
   font-family: 'Roboto', sans-serif;
   background-image: url("../img/3.png");
@@ -36,7 +36,7 @@ body {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow-x: hidden !important;
   font-family: 'Roboto', sans-serif;
   background-size: cover;
@@ -89,7 +89,7 @@ h1 {
   top: 50%;
   left: 50%;
   width: 30em;
-  height: 18em;
+  height: 14em;
   margin-top: -9em;
   /*set to a negative number 1/2 of your height*/
   margin-left: -15em;
@@ -97,10 +97,18 @@ h1 {
   background-color: white;
   color: black;
   display: none;
+  border : 1px black solid;
+  border-radius : 5px;
 }
 
 #modalDeathHeroTitle {
-  font-family: Basalt;
+  font-family : Basalt;
+  font-size : 36px;
+}
+
+#modalDeathHeroText {
+  font-size : 20px;
+
 }
 
 #modalDeathEnnemy {
@@ -110,16 +118,25 @@ h1 {
   top: 50%;
   left: 50%;
   width: 30em;
-  height: 18em;
+  height: 12em;
   margin-top: -9em;
   /*set to a negative number 1/2 of your height*/
   margin-left: -15em;
   /*set to a negative number 1/2 of your width*/
-  background-color: red;
-  color: pink;
+  background-color: white;
+  color: black;
   display: none;
+  border : 1px black solid;
+  border-radius : 5px;
+}
+#modalDeathEnnemyTitle {
+  font-family : Basalt;
+  font-size : 36px;
 }
 
+#modalDeathEnnemyText {
+  font-size : 20px;
+}
 #modalVictory {
   z-index: 7;
   text-align: center;
@@ -127,14 +144,27 @@ h1 {
   top: 50%;
   left: 50%;
   width: 30em;
-  height: 18em;
+  height: 14em;
   margin-top: -9em;
   /*set to a negative number 1/2 of your height*/
   margin-left: -15em;
   /*set to a negative number 1/2 of your width*/
-  background-color: red;
-  color: pink;
+  background-color: white;
+  color: black;
   display: none;
+  border : 1px black solid;
+  border-radius : 5px;
+}
+#modalVictoryTitle {
+  font-family : Basalt;
+  font-size : 36px;
+}
+
+#modalVictoryText {
+  font-size : 20px;
+}
+#victoryTime {
+  font-weight : bold;
 }
 
 /* Jauge de vie Ennemi */
@@ -216,6 +246,8 @@ input {
   margin-top : 40px;
   position : absolute !important;
   right : 0;
+  margin-bottom : 150px !important;
+
 }
 
 @media (max-width: 760px) {

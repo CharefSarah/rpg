@@ -105,7 +105,7 @@
 
   <div class="container-fluid  justify-content-right ">
     <div class="row">
-      <div class="badguy col-md-2 col-sm-2 m-3 ">
+      <div class="badguy col-md-2 col-sm-2 m-md-3 m-sm-0">
         <div class="text-right p-2">
           LE MECHANT : <br>
           Nom : <span id="badGuyName"></span><br><br>
@@ -141,18 +141,24 @@
     </div>
   </div>
 
-  <div id="modalDeathHero">Votre heros est mourru
-    <button id="dismissDeathHero">Dismiss</button>
+  
+  <div id="modalDeathEnnemy">
+    <h2 id="modalDeathEnnemyTitle">Bien joué !</h2>
+    <p id="modalDeathEnnemyText">Vous avez vaincu un des sbires de Void. <br>Continuez comme ca !</p>
+    <button id="dismissDeathEnnemy">Continuer</button>
   </div>
 
-  <div id="modalDeathEnnemy">Vous avez vaincu votre adversaire
-    <button id="dismissDeathEnnemy">Dismiss</button>
+  <div id="modalDeathHero">
+    <h2 id="modalDeathHeroTitle">Dommage...</h2>
+    <p id="modalDeathHeroText">Vous avez été vaincu par les forces de Void, mais il vous reste une chance ! <br> Retournez au combat Shield-bearer ! </p>
+    <button id="dismissDeathHero">Continuer</button>
   </div>
+
 
   <div id="modalVictory">
-    VICTOIRE
-    Vous avez gagné en : <span id="victoryTime"></span>
-    <button id="dismissModalVictory">Dismiss</button>
+    <h2 id="modalVictoryTitle">VICTOIRE</h2>
+    <p id="modalVictoryText">BRAVO <br> Vous avez vaincu les forces du mal en <span id="victoryTime"></span></p>
+    <button id="dismissModalVictory">Recommencer?</button>
   </div>
 
 
