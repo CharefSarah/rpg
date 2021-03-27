@@ -82,8 +82,21 @@ function Hero(name, health, maxHealth, defence, attack, weakness, resistance, li
 // vie 
 var life = 3;
 
-
-
+function background() {
+  if (round == 5) {
+    document.body.style.backgroundImage = "url(assets/img/7.jpg)"; //changing bg image
+  } else if (round == 10) {
+    document.body.style.backgroundImage = "url(assets/img/8.jpg)";
+  } else if (round == 15) {
+    document.body.style.backgroundImage = "url(assets/img/10.jpg)";
+  } else if (round == 20) {
+    document.body.style.backgroundImage = "url(assets/img/2.png)";
+  } else if (round == 25) {
+    document.body.style.backgroundImage = "url(assets/img/5.jpg)";
+  } else if (round == 30) {
+    document.body.style.backgroundImage = "url(assets/img/12.jpg)";
+  }
+}
 
 // window.addEventListener("load", function () {
 //   document.getElementById("lifeTotal").innerHTML = life;
@@ -413,6 +426,7 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   EndGame();
   DeathEnemy();
   winner();
+  background();
 });
 
 
@@ -431,6 +445,7 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   DeathHero();
   DeathEnemy();
   winner();
+  background();
 
 });
 
