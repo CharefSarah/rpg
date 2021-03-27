@@ -281,7 +281,7 @@ function BadGuy(name, health, maxHealth, defence, attack, weakness, resistance) 
 }
 
 // Compteur de round
-var round = 31;
+var round = 1;
 document.getElementById("round").innerHTML = round;
 
 //Creation du méchant selon le nombre de round: 
