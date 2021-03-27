@@ -30,13 +30,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav p-1">
-            <li class="nav-item active">
+            <li class="nav-item active text-white">
               <a class="nav-link m-2" href="index.html">Accueil</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item active text-white">
+              <a class="nav-link m-2" href="#">Univers</a>
+            </li>
+            <li class="nav-item active text-white">
               <a class="nav-link m-2" href="#">About</a>
             </li>
-            <li class="nav-item p-1">
+            <li class="nav-item p-1 text-white">
               <a class="nav-link" href="#"></a>
             </li>
           </ul>
@@ -51,7 +54,7 @@
   </div>
 
 
-  <p class="m-3">Niveau:<span id=round></span></p>
+  <p id="d1" class="choice m-2 text-left display-3 m-2 text-white">Niveau:<span id=round></span></p>
   <div class="container-fluid ">
     <div class="row">
       <div id="buttons" class="col-3 d-flex  justify-content-center mx-auto p-3 m-3">
@@ -67,13 +70,13 @@
       </div>
     </div>
   </div>
-  <span id=round> </span>
+  <main id="d2">
+    <span id=round> </span>
   </div>
   <div class="container-fluid ">
     <div class="row">
       <div class="hero col-md-2 col-sm-2 ">
-        <div class=" p-3">
-
+        <div class="p-3">
           <span id="heroName"></span> <br>
           <p class="">Vie:
             <i id="heart0" class="fas fa-heart"></i>
@@ -87,66 +90,67 @@
             <i id="heart8" class="fas fa-heart"></i>
             <i id="heart9" class="fas fa-heart"></i>
           </p>
-          Point de vie : <span id="heroHealth"></span><br>
-          <!-- JAUGE HERO-->
-          <div class="healthBar" id="healthBar" value="1000" max="1000">
-            <div class="bar" id="bar">
+            Point de vie : <span id="heroHealth"></span><br>
+            <!-- JAUGE HERO-->
+            <div class="healthBar" id="healthBar" value="1000" max="1000">
+              <div class="bar" id="bar">
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-
-  <div class="container-fluid  justify-content-right">
-    <div class="row">
-      <div class="badguy col-md-2 col-sm-2 m-md-3 m-sm-0 mb-sm-3">
-        <div class="text-right p-2">
+    <div class="container-fluid ">
+      <div class="row">
+        <div class="badguy col-7 col-md-2 col-sm-2 p-3">
+          <div class="text-right p-2">
          
-          <span id="badGuyName"></span><br><br>
-          Points de vie : <span id="badGuyHealth"></span>
-          <!-- JAUGE ENNEMI -->
-          <div class="badguyHealthBar pull-right" id="badguyHealthBar" value="1000" max="1000">
-            <div class="badguyBar" id="badguyBar">
+            <span id="badGuyName"></span><br><br>
+            Points de vie : <span id="badGuyHealth"></span>
+            <!-- JAUGE ENNEMI -->
+            <div class="badguyHealthBar pull-right" id="badguyHealthBar" value="1000" max="1000">
+              <div class="badguyBar" id="badguyBar">
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <br>
+
+    <div id="buttons" class="text-center">
+      <button id="baseAttack"> <span id="basicAttackName"> </span> <span id="basicAttack"> </span>/30</button>
+
+      <button id="heavyAttack"> <span id="bigAttackName"> </span> <span id="bigAttack"> </span>/10</button>
+
+      <button id="potion">Potion <span id="stockPotion"></span></button>
+      <p id="potionAlert"></p>
+
+      <div id="announcements" class="m-3 m-auto"></div>
+  </main>
+
   </div>
 
-  <div id="buttons" class="text-center">
-    <button id="baseAttack"> <span id="basicAttackName"> </span> <span id="basicAttack"> </span>/30</button>
-
-    <button id="heavyAttack"> <span id="bigAttackName"> </span> <span id="bigAttack"> </span>/10</button>
-
-    <button id="potion">Potion <span id="stockPotion"></span></button>
-    <p id="potionAlert"></p>
-
-    <div id="announcements" class="m-3"></div>
-
-
-  </div>
-
-  <div class="container-fluid p-0">
+  <div class="container-fluid p-0 fixed-bottom">
     <div class="row m-0 p-0">
       <footer class="footer  bg-dark ">
-        <p class=" text-white text-center "> © Sarah Charef | William Touboul</p>
+        <p class=" text-white text-center  p-3"> © Sarah Charef & William Touboul</p>
       </footer>
     </div>
   </div>
 
-  
+
   <div id="modalDeathEnnemy">
     <h2 id="modalDeathEnnemyTitle">Bien joué !</h2>
-    <p id="modalDeathEnnemyText">Vous avez vaincu un des sbires de Void. <br>Continuez comme ca !</p>
+    <p id="modalDeathEnnemyText">Vous avez vaincu un des orques de Void. <br>Continuez comme ca !</p>
     <button id="dismissDeathEnnemy">Continuer</button>
   </div>
 
   <div id="modalDeathHero">
     <h2 id="modalDeathHeroTitle">Dommage...</h2>
-    <p id="modalDeathHeroText">Vous avez été vaincu par les forces de Void, mais il vous reste une chance ! <br> Retournez au combat Shield-bearer ! </p>
+    <p id="modalDeathHeroText">Vous avez été vaincu par les forces de Void, mais il vous reste une chance ! <br>
+      Retournez au combat Shield-bearer ! </p>
     <button id="dismissDeathHero">Continuer</button>
   </div>
 

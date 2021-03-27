@@ -65,8 +65,26 @@ function chronoStop() {
   clearTimeout(timerID)
 }
 
-
-
+// Cache le reste du body temps qu'un héro n'a pas était selectioné.
+window.onload = function(){
+  d1.style.display = "none";
+  d2.style.display = "none";
+  }
+  function togg(){
+    if(getComputedStyle(d2).display != "none"){
+      d2.style.display = "none";
+    } else {
+      d2.style.display = "block";
+    }
+  };
+  function togg1(){
+    if(getComputedStyle(d1).display != "none"){
+      d1.style.display = "none";
+    } else {
+      d1.style.display = "block";
+    }
+  };
+ 
 // Consctructeur objet Hero.
 function Hero(name, health, maxHealth, defence, attack, weakness, resistance, lightAttack, bigAttack) {
   this.name = name;
@@ -97,6 +115,8 @@ function background() {
     document.body.style.backgroundImage = "url(assets/img/12.jpg)";
   }
 }
+
+
 
 
 var playByPlay = document.getElementById('announcements');
@@ -255,6 +275,8 @@ var hero = classSelectArray.forEach(element => {
       ButtonDisappear();
       displayLife();
       chronoStart();
+      togg();
+      togg1();
       return hero;
 
 
@@ -265,6 +287,8 @@ var hero = classSelectArray.forEach(element => {
       ButtonDisappear();
       displayLife();
       chronoStart();
+      togg();
+      togg1();
       return hero;
 
 
@@ -275,6 +299,8 @@ var hero = classSelectArray.forEach(element => {
       ButtonDisappear();
       displayLife();
       chronoStart();
+      togg();
+      togg1();
       return hero;
 
     }
@@ -499,4 +525,3 @@ function addPotion() {
   document.getElementById("stockPotion").innerHTML = stockPotion;
   return stockPotion;
 }
-// ajoute ube vie tout les  5 niveaux
