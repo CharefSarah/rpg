@@ -40,20 +40,19 @@
               <a class="nav-link" href="#"></a>
             </li>
           </ul>
-          <div>
-            <form name="chronoForm" id="chronoForm" class="text-center">
-              <input type="text" name="chronotime" id="chronotime" value="0:00:00:00" />
-              <input type="button" id="startstop" name="startstop" value="start!" />
-              <input type="button" id="reset" name="reset" value="reset!" onClick="chronoReset()" />
-            </form>
-          </div>
         </div>
-      </nav>
+        <form name="chronoForm" id="chronoForm" class="text-right m-3">
+          <input type="text" name="chronotime" id="chronotime" value="0:00:00:00" />
+          <input type="button" id="startstop" name="startstop" value="start!" />
+          <input type="button" id="reset" name="reset" value="reset!" onClick="chronoReset()" />
+        </form>
     </div>
+    </nav>
   </div>
 
-  <p>Niveau:<span id=round></span></p>
-  <p>Vie:
+
+  <p class="m-3">Niveau:<span id=round></span></p>
+  <p class="m-3">Vie:
     <i id="heart0" class="fas fa-heart"></i>
     <i id="heart1" class="fas fa-heart"></i>
     <i id="heart2" class="fas fa-heart"></i>
@@ -103,7 +102,7 @@
   </div>
   <br>
 
-  <div class="container-fluid  justify-content-right ">
+  <div class="container-fluid  justify-content-right">
     <div class="row">
       <div class="badguy col-md-2 col-sm-2 m-md-3 m-sm-0">
         <div class="text-right p-2">
@@ -133,7 +132,7 @@
     <p id="potionAlert"></p>
   </div>
 
-  <div class="container-fluid m-0 p-0">
+  <div class="container-fluid p-0">
     <div class="row m-0 p-0">
       <footer class="footer  bg-dark ">
         <p class=" text-white text-center "> © Sarah Charef & William Touboul</p>
