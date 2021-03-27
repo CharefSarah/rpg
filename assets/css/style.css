@@ -41,7 +41,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background-size: cover;
   color: rgb(255, 255, 255) !important;
-  background: rgb(17, 10, 31) !important;
+  background-image: url("../img/14.png");
 }
 
 h1 {
@@ -244,12 +244,9 @@ input {
 }
 
 .footer {
-  background: rgb(17, 10, 31) !important;
-}
-
-.footer {
   left: 0;
   bottom: 0;
+  background: rgb(17, 10, 31) !important;
 }
 
 .fa-heart {
@@ -259,9 +256,6 @@ input {
 
 }
 
-.jumbotron {
-  background: transparent !important;
-}
 
 .hero {
   background: rgba(17, 10, 31, 0.822) !important;
@@ -298,8 +292,10 @@ input {
   }
 }
 
-.card {
-  background: transparent !important;
+.jumbotron {
+  background : rgba(41, 2, 114, 0.527) !important;
+  margin: 30px;
+  border-radius: 10px;
 }
 
 
@@ -354,3 +350,4 @@ button:disabled,
 button[disabled] {
   background-color : rgb(17, 10, 31, 0.4) !important;
 }
+
