@@ -66,25 +66,27 @@ function chronoStop() {
 }
 
 // Cache le reste du body temps qu'un héro n'a pas était selectioné.
-window.onload = function(){
+window.onload = function () {
   d1.style.display = "none";
   d2.style.display = "none";
+}
+
+function togg() {
+  if (getComputedStyle(d2).display != "none") {
+    d2.style.display = "none";
+  } else {
+    d2.style.display = "block";
   }
-  function togg(){
-    if(getComputedStyle(d2).display != "none"){
-      d2.style.display = "none";
-    } else {
-      d2.style.display = "block";
-    }
-  };
-  function togg1(){
-    if(getComputedStyle(d1).display != "none"){
-      d1.style.display = "none";
-    } else {
-      d1.style.display = "block";
-    }
-  };
- 
+};
+
+function togg1() {
+  if (getComputedStyle(d1).display != "none") {
+    d1.style.display = "none";
+  } else {
+    d1.style.display = "block";
+  }
+};
+
 // Consctructeur objet Hero.
 function Hero(name, health, maxHealth, defence, attack, weakness, resistance, lightAttack, bigAttack) {
   this.name = name;
@@ -119,17 +121,17 @@ function background() {
 var playByPlay = document.getElementById('announcements');
 var numberOfEvent = 0;
 
-function clearDisplayEvent(){
+function clearDisplayEvent() {
   playByPlay.innerHTML = "";
   numberOfEvent = 0;
 }
 
-function displayEvent(message){
-  numberOfEvent ++;
-  if(numberOfEvent>=10) {
+function displayEvent(message) {
+  numberOfEvent++;
+  if (numberOfEvent >= 10) {
     clearDisplayEvent();
   }
-  playByPlay.innerHTML += message  + "<br>" ; 
+  playByPlay.innerHTML += message + "<br>";
 }
 
 
@@ -188,7 +190,7 @@ function ModalGameOver() {
   console.log(chronotime.value);
   document.getElementById("modalGameOver").style.display = "block";
 }
-document.getElementById("dismissModalGameOver").addEventListener("click",function() {
+document.getElementById("dismissModalGameOver").addEventListener("click", function () {
   document.getElementById("modalGameOver").style.display = "none";
   document.location.reload();
 })
@@ -550,3 +552,13 @@ function addPotion() {
   document.getElementById("stockPotion").innerHTML = stockPotion;
   return stockPotion;
 }
+
+$(document).ready(function () {
+  $("#baseAttack").click(function () {
+    $(".badguy").effect("shake",{times:2}, 400,);
+  });
+  $("#heavyAttack").click(function () {
+    $(".badguy").effect("shake",{times:3}, 300,);
+  });
+});
+
