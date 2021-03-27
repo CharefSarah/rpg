@@ -216,7 +216,7 @@ input {
   right : 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .hero{
     margin-left : 0;
     padding-left : 15% !important;
@@ -229,5 +229,6 @@ input {
     padding-right : 15% !important;
     width : auto;
     border-radius : 5px 0 0 5px;
+    margin-bottom : 150px;
   }
 }
