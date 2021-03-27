@@ -270,3 +270,16 @@ input {
 .card{
   background:transparent !important;
 }
+
+
+#announcements {
+  background : rgb(17, 10, 31) !important;
+  color : white;
+  height : 250px;
+  overflow-x: hidden !important;
+  width : 500px;
+  border-radius : 5px;
+  border : 1px black solid;
+  line-height: 150%;
+
+}

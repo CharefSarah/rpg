@@ -99,6 +99,23 @@ function background() {
 }
 
 
+var playByPlay = document.getElementById('announcements');
+var numberOfEvent = 0;
+
+function clearDisplayEvent(){
+  playByPlay.innerHTML = "";
+  numberOfEvent = 0;
+}
+
+function displayEvent(message){
+  numberOfEvent ++;
+  if(numberOfEvent>=10) {
+    clearDisplayEvent();
+  }
+  playByPlay.innerHTML += message  + "<br>" ; 
+}
+
+
 function ModalDeathHero() {
   document.getElementById("modalDeathHero").style.display = "block";
 }
@@ -287,11 +304,11 @@ document.getElementById("round").innerHTML = round;
 //Creation du méchant selon le nombre de round: 
 function CreateBadGuy() {
   if (round == 30) {
-    var badGuy = new BadGuy("Chevalier Noir", 1000, 1000, 30, 40, "none", "sword");
+    var badGuy = new BadGuy("Void", 1000, 1000, 30, 40, "none", "sword");
   } else if (round == 20) {
     var badGuy = new BadGuy("Araignée Géante Cracheuse De Feu", 750, 750, 30, 50, "none", "none")
   } else if (round == 10) {
-    var badGuy = new BadGuy("Roi des orcs", 630, 630, 30, 32, "none", "none")
+    var badGuy = new BadGuy("Xonoth", 630, 630, 30, 32, "none", "none")
   } else {
     var badGuy = new BadGuy("Orc", 300, 300, 10, 30, "all", "none");
   }
@@ -318,6 +335,7 @@ window.addEventListener("load", function () {
 // mort du méchant
 function DeathEnemy() {
   if (badGuy.health <= 0) {
+    clearDisplayEvent();
     ModalDeathEnnemy();
     round++;
     document.getElementById("round").innerHTML = round;
@@ -341,6 +359,7 @@ function Crit() {
   // Renvoi un nombre entre 1 et 100
   crit = Math.floor(Math.random() * 100) + 1;
   if (crit <= 10) {
+    displayEvent("COUP CRITIQUE!!");
     return true;
   } else {
     return false;
@@ -370,9 +389,11 @@ function Dodge() {
   dodge = Math.floor(Math.random() * 100) + 1;
   if (dodge <= 10) {
     ennemyDamage = 0;
+    displayEvent("Vous avez esquivé!");
     console.log("Esquivé");
   } else {
     ennemyDamage = badGuy.attack;
+    displayEvent("L'ennemi a contre attaqué, vous avez pris " + ennemyDamage + " dégats");
   }
 }
 
@@ -396,11 +417,11 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   damage = BaseAttackDamage();
   badGuy.health = badGuy.health - damage;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
+  displayEvent("Vous avez infligé " + damage + " dégats avec votre " + hero.lightAttack);
   Dodge();
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
   LostBasicAttack();
-  // J'appelle la fonction pour faire bouger les jauges par rapport aux changement dans les Points de vie de tout le monde
   MoveEnnemyHealthBar();
   setTimeout(MoveAllyHealthBar, 800);
   DeathHero();
@@ -418,6 +439,7 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   damage = HeavyAttackDamage();
   badGuy.health = badGuy.health - damage;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
+  displayEvent("Vous avez infligé " + damage + " dégats avec votre " + hero.bigAttack);
   Dodge();
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
@@ -461,6 +483,7 @@ document.getElementById("potion").addEventListener("click", function () {
     if (hero.health < hero.maxHealth && heroHealthToGet < hero.maxHealth) {
       hero.health = hero.health + 50;
       stockPotion--;
+      displayEvent("Votre potion vous a rendu 50PV.");
       document.getElementById("heroHealth").innerHTML = hero.health;
       document.getElementById("stockPotion").innerHTML = stockPotion;
       MoveAllyHealthBar();
