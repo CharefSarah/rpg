@@ -242,8 +242,6 @@ function SetHeroValue() {
   document.getElementById("heroHealth").innerHTML = hero.health;
   health.setAttribute("value", hero.health);
   health.setAttribute("max", hero.maxHealth);
-  document.getElementById("heroDefence").innerHTML = hero.defence;
-  document.getElementById("heroAttack").innerHTML = hero.attack;
 }
 
 // Selection de tout les boutons de choix de classes
@@ -321,8 +319,7 @@ function DisplayBadGuy() {
   badGuyHealth.value = badGuy.health;
   badGuyHealth.setAttribute("value", badGuy.health);
   badGuyHealth.setAttribute("max", badGuy.health);
-  document.getElementById("badGuyDefence").innerHTML = badGuy.defence;
-  document.getElementById("badGuyAttack").innerHTML = badGuy.attack;
+
 }
 
 // création du méchant
@@ -359,7 +356,7 @@ function Crit() {
   // Renvoi un nombre entre 1 et 100
   crit = Math.floor(Math.random() * 100) + 1;
   if (crit <= 10) {
-    displayEvent("COUP CRITIQUE!!");
+    displayEvent("- COUP CRITIQUE!!");
     return true;
   } else {
     return false;
@@ -389,11 +386,11 @@ function Dodge() {
   dodge = Math.floor(Math.random() * 100) + 1;
   if (dodge <= 10) {
     ennemyDamage = 0;
-    displayEvent("Vous avez esquivé!");
+    displayEvent("- Vous avez esquivé!");
     console.log("Esquivé");
   } else {
     ennemyDamage = badGuy.attack;
-    displayEvent("L'ennemi a contre attaqué, vous avez pris " + ennemyDamage + " dégats");
+    displayEvent("- L'ennemi a contre attaqué, vous avez pris " + ennemyDamage + " dégats");
   }
 }
 
@@ -417,7 +414,7 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   damage = BaseAttackDamage();
   badGuy.health = badGuy.health - damage;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
-  displayEvent("Vous avez infligé " + damage + " dégats avec votre " + hero.lightAttack);
+  displayEvent("- Vous avez infligé " + damage + " dégats avec votre " + hero.lightAttack);
   Dodge();
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
@@ -439,7 +436,7 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   damage = HeavyAttackDamage();
   badGuy.health = badGuy.health - damage;
   document.getElementById("badGuyHealth").innerHTML = badGuy.health;
-  displayEvent("Vous avez infligé " + damage + " dégats avec votre " + hero.bigAttack);
+  displayEvent("- Vous avez infligé " + damage + " dégats avec votre " + hero.bigAttack);
   Dodge();
   hero.health = hero.health - ennemyDamage;
   document.getElementById("heroHealth").innerHTML = hero.health;
@@ -483,7 +480,7 @@ document.getElementById("potion").addEventListener("click", function () {
     if (hero.health < hero.maxHealth && heroHealthToGet < hero.maxHealth) {
       hero.health = hero.health + 50;
       stockPotion--;
-      displayEvent("Votre potion vous a rendu 50PV.");
+      displayEvent("- Votre potion vous a rendu 50PV.");
       document.getElementById("heroHealth").innerHTML = hero.health;
       document.getElementById("stockPotion").innerHTML = stockPotion;
       MoveAllyHealthBar();
