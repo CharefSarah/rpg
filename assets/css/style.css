@@ -265,9 +265,8 @@ input {
   .badguy {
     margin-right: 0;
     border-radius: 5px 0 0 5px;
-    margin-bottom: 20px !important;
-    padding-left: 15% !important;
-    width: auto;
+    margin-bottom: 350px !important;
+    position: fixed;
   }
 }
 
@@ -277,40 +276,40 @@ input {
 
 
 #announcements {
-  background: rgb(17, 10, 31, 0.6) !important;
-  color: white;
-  height: 250px;
+  background : rgb(17, 10, 31,0.6) !important;
+  color : white;
+  height : 250px;
   overflow-x: hidden !important;
   width: 500px;
   border-radius: 5px;
   border: 1px black solid;
   line-height: 150%;
-  margin-bottom: 15px !important;
+  margin-bottom : 15px !important;
 }
 
 @media (max-width:760px) {
   #announcements {
-    display: none !important;
+    display : none !important;
   }
 }
 
 html::-webkit-scrollbar {
-  width: 0.5rem;
-  background-color: white;
+	width: 0.5rem;
+	background-color: white;
 }
 
 html::-webkit-scrollbar-thumb {
-  background: rgb(17, 10, 31);
+	background: rgb(17, 10, 31);
 }
 
 @media (max-width: 760px) {
   .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    position : fixed;
+    left:0;
+    bottom:0;
   }
 }
 
-.choice {
+.choice{
   margin-bottom: 20px !important;
 }
