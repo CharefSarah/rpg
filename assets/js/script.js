@@ -116,9 +116,6 @@ function background() {
   }
 }
 
-
-
-
 var playByPlay = document.getElementById('announcements');
 var numberOfEvent = 0;
 
@@ -539,10 +536,10 @@ document.getElementById("potion").addEventListener("click", function () {
       document.getElementById("stockPotion").innerHTML = stockPotion;
       MoveAllyHealthBar();
     } else {
-      document.getElementById("potionAlert").innerHTML = "Vous n'avez pas besoin de potion !"
+      displayEvent("- Vous n'avez pas besoin de potion !")
     }
   } else {
-    document.getElementById("potionAlert").innerHTML = "Vous n'avez plus assez de potion";
+    displayEvent("- Vous n'avez plus assez de potion")
   }
 });
 

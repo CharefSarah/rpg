@@ -350,3 +350,8 @@ html::-webkit-scrollbar-thumb {
 #badGuyName {
   font-size : 28px;
 }
+
+button:disabled,
+button[disabled] {
+  background-color : rgb(17, 10, 31, 0.4) !important;
+}
