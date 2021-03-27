@@ -64,15 +64,24 @@ function chronoStop() {
   document.chronoForm.reset.onclick = chronoStopReset
   clearTimeout(timerID)
 }
+
+// Cache le reste du body temps qu'un héro n'a pas était selectioné.
 window.onload = function(){
+  d1.style.display = "none";
   d2.style.display = "none";
   }
-
   function togg(){
     if(getComputedStyle(d2).display != "none"){
       d2.style.display = "none";
     } else {
       d2.style.display = "block";
+    }
+  };
+  function togg1(){
+    if(getComputedStyle(d1).display != "none"){
+      d1.style.display = "none";
+    } else {
+      d1.style.display = "block";
     }
   };
  
@@ -267,6 +276,7 @@ var hero = classSelectArray.forEach(element => {
       displayLife();
       chronoStart();
       togg();
+      togg1();
       return hero;
 
 
@@ -278,6 +288,7 @@ var hero = classSelectArray.forEach(element => {
       displayLife();
       chronoStart();
       togg();
+      togg1();
       return hero;
 
 
@@ -289,6 +300,7 @@ var hero = classSelectArray.forEach(element => {
       displayLife();
       chronoStart();
       togg();
+      togg1();
       return hero;
 
     }
