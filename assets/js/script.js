@@ -137,16 +137,28 @@ function displayEvent(message){
 
 
 function ModalDeathHero() {
+  document.getElementById("baseAttack").disabled = "true";
+  document.getElementById("heavyAttack").disabled = "true";
+  document.getElementById("potion").disabled = "true";
   document.getElementById("modalDeathHero").style.display = "block";
 }
 document.getElementById("dismissDeathHero").addEventListener("click", function () {
+  document.getElementById("baseAttack").disabled = false;
+  document.getElementById("heavyAttack").disabled = false;
+  document.getElementById("potion").disabled = false;
   document.getElementById("modalDeathHero").style.display = "none";
 });
 
 function ModalDeathEnnemy() {
+  document.getElementById("baseAttack").disabled = "true";
+  document.getElementById("heavyAttack").disabled = "true";
+  document.getElementById("potion").disabled = "true";
   document.getElementById("modalDeathEnnemy").style.display = "block";
 }
 document.getElementById("dismissDeathEnnemy").addEventListener("click", function () {
+  document.getElementById("baseAttack").disabled = false;
+  document.getElementById("heavyAttack").disabled = false;
+  document.getElementById("potion").disabled = false;
   document.getElementById("modalDeathEnnemy").style.display = "none";
 });
 
@@ -156,6 +168,9 @@ document.getElementById("dismissDeathEnnemy").addEventListener("click", function
 function ModalVictory() {
   chronoStop();
   console.log(chronotime.value);
+  document.getElementById("baseAttack").disabled = "true";
+  document.getElementById("heavyAttack").disabled = "true";
+  document.getElementById("potion").disabled = "true";
   document.getElementById("modalVictory").style.display = "block";
   document.getElementById("victoryTime").innerHTML = chronotime.value;
   document.getElementById("chronoForm").style.display = "none";
@@ -167,6 +182,19 @@ document.getElementById("dismissModalVictory").addEventListener("click", functio
   document.location.reload();
 })
 
+
+function ModalGameOver() {
+  chronoStop();
+  document.getElementById("baseAttack").disabled = "true";
+  document.getElementById("heavyAttack").disabled = "true";
+  document.getElementById("potion").disabled = "true";
+  console.log(chronotime.value);
+  document.getElementById("modalGameOver").style.display = "block";
+}
+document.getElementById("dismissModalGameOver").addEventListener("click",function() {
+  document.getElementById("modalGameOver").style.display = "none";
+  document.location.reload();
+})
 
 // nombres d'attaques
 
@@ -201,8 +229,7 @@ function winner() {
 // Game over plus refresh de la page
 function EndGame() {
   if (life == 0) {
-    confirm("GAME OVER!");
-    document.location.reload();
+    ModalGameOver();
   }
 }
 
@@ -359,7 +386,6 @@ window.addEventListener("load", function () {
 function DeathEnemy() {
   if (badGuy.health <= 0) {
     clearDisplayEvent();
-    ModalDeathEnnemy();
     round++;
     document.getElementById("round").innerHTML = round;
     badGuy = CreateBadGuy();
@@ -373,6 +399,8 @@ function DeathEnemy() {
     bigAttack = 10;
     document.getElementById("bigAttack").innerHTML = bigAttack;
     document.getElementById("heavyAttack").disabled = false;
+    ModalDeathEnnemy();
+
 
   }
 }
