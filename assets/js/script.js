@@ -98,9 +98,9 @@ function background() {
   }
 }
 
-window.addEventListener("load", function () {
-  document.getElementById("lifeTotal").innerHTML = life;
-});
+// window.addEventListener("load", function () {
+//   document.getElementById("lifeTotal").innerHTML = life;
+// });
 
 
 
@@ -265,7 +265,6 @@ var hero = classSelectArray.forEach(element => {
       SetHeroValue();
       ButtonDisappear();
       displayLife();
-
       chronoStart();
       return hero;
 
@@ -276,7 +275,6 @@ var hero = classSelectArray.forEach(element => {
       SetHeroValue();
       ButtonDisappear();
       displayLife();
-
       chronoStart();
       return hero;
 
