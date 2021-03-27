@@ -98,11 +98,6 @@ function background() {
   }
 }
 
-// window.addEventListener("load", function () {
-//   document.getElementById("lifeTotal").innerHTML = life;
-// });
-
-
 
 function ModalDeathHero() {
   document.getElementById("modalDeathHero").style.display = "block";
@@ -118,11 +113,6 @@ document.getElementById("dismissDeathEnnemy").addEventListener("click", function
   document.getElementById("modalDeathEnnemy").style.display = "none";
 });
 
-
-// // Test pour stopper le chrono.
-// document.getElementById("potion").addEventListener("click", function () {
-// chronoStop();
-// });
 
 
 
@@ -195,8 +185,6 @@ function displayLife() {
   for (let i = 0; i < life; i++) {
     var heart = "heart" + i;
     document.getElementById(heart).style.display = "inline";
-    console.log(heart);
-
   }
 }
 
@@ -206,8 +194,6 @@ function addLife() {
   if (round == 5 || round == 10 || round == 15 || round == 20 || round == 25 || round == 30) {
     life = life + 1;
     displayLife();
-
-    document.getElementById("lifeTotal").innerHTML = life;
   }
 }
 
@@ -217,7 +203,6 @@ function LostLife() {
     life = life - 1;
     displayLife();
     hero.health = hero.maxHealth;
-    document.getElementById("lifeTotal").innerHTML = life;
   }
 }
 
@@ -242,7 +227,6 @@ function SetHeroValue() {
   health.setAttribute("max", hero.maxHealth);
   document.getElementById("heroDefence").innerHTML = hero.defence;
   document.getElementById("heroAttack").innerHTML = hero.attack;
-  console.log(hero);
 }
 
 // Selection de tout les boutons de choix de classes
@@ -396,14 +380,12 @@ function Dodge() {
 function MoveAllyHealthBar() {
   health.setAttribute("value", hero.health);
   var percentHealth = (hero.health / hero.maxHealth) * 100;
-  console.log(percentHealth);
   document.getElementById("bar").style.width = percentHealth + "%";
 }
 
 function MoveEnnemyHealthBar() {
   badGuyHealth.setAttribute("value", badGuy.health);
   var percentHealth = (badGuy.health / badGuy.maxHealth) * 100;
-  console.log(percentHealth);
   if (badGuy.health <= 0) {
     percentHealth = 100;
   }
@@ -471,7 +453,9 @@ window.addEventListener("load", function () {
 // Function pour utiliser des potions tant qu'il en reste
 document.getElementById("potion").addEventListener("click", function () {
   if (stockPotion > 0) {
-    if (hero.health < hero.maxHealth) {
+    heroHealthToGet = hero.health + 50;
+    console.log(heroHealthToGet);
+    if (hero.health < hero.maxHealth && heroHealthToGet < hero.maxHealth) {
       hero.health = hero.health + 50;
       stockPotion--;
       document.getElementById("heroHealth").innerHTML = hero.health;
