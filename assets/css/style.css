@@ -220,6 +220,7 @@ h1 {
   /*set to a negative number 1/2 of your height*/
   margin-left: -15em;
   /*set to a negative number 1/2 of your width*/
+  padding : 10px;
   background-color: white;
   color: black;
   display: none;
@@ -233,7 +234,7 @@ h1 {
 }
 
 #modalProgressText {
-  font-size: 20px;
+  font-size: 18px;
 
 }
 
