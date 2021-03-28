@@ -646,7 +646,7 @@ document.getElementById("round").innerHTML = round;
 //Creation du méchant selon le nombre de round: 
 function CreateBadGuy() {
   if (round == 30) {
-    var badGuy = new BadGuy("Void", 1400, 1500, 30, 40, "none", "sword","assets/img/darkknight.png");
+    var badGuy = new BadGuy("Void", 1300, 1300, 30, 40, "none", "sword","assets/img/darkknight.png");
   } else if (round == 20) {
     var badGuy = new BadGuy("Ekrid", 850, 850, 30, 50, "none", "none","assets/img/spider.png");
   } else if (round == 10) {
