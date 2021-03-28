@@ -1,3 +1,9 @@
+// masque le body temps que le héro n'est pas selectionnée
+window.onload = function () {
+  d1.style.display = "none";
+  d2.style.display = "none";
+}
+
 ////////////////////////////////////////////////////////////////
 // CHRONO
 ////////////////////////////////////////////////////////////////
@@ -66,10 +72,6 @@ function chronoStop() {
 }
 
 // Cache le reste du body temps qu'un héro n'a pas était selectioné.
-window.onload = function () {
-  d1.style.display = "none";
-  d2.style.display = "none";
-}
 
 function togg() {
   if (getComputedStyle(d2).display != "none") {
@@ -332,9 +334,6 @@ var hero = classSelectArray.forEach(element => {
     }
   });
 });
-
-
-
 
 //Constructeur objet Méchant.
 function BadGuy(name, health, maxHealth, defence, attack, weakness, resistance) {
