@@ -204,6 +204,52 @@ h1 {
   border-radius: 5px;
 }
 
+
+
+#modalProgress {
+  z-index: 7;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 30em;
+  height: auto;
+  margin-top: -9em;
+  /*set to a negative number 1/2 of your height*/
+  margin-left: -15em;
+  /*set to a negative number 1/2 of your width*/
+  background-color: white;
+  color: black;
+  display: none;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+#modalProgressTitle {
+  font-family: Basalt;
+  font-size: 36px;
+}
+
+#modalProgressText {
+  font-size: 20px;
+
+}
+
+#modalProgressBadge1 {
+  height : 80px;
+  width : auto;
+}
+
+#modalProgressBadge2 {
+  height : 80px;
+  width : auto;
+}
+
+#modalProgressBadge3 {
+  height : 80px;
+  width : auto;
+}
+
 #buttons {
   background: transparent !important;
 }
