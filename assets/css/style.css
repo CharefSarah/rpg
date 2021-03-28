@@ -45,6 +45,19 @@ body {
 
 }
 
+#body2 {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden !important;
+  font-family: 'Roboto', sans-serif;
+  background-size: cover;
+  background: #271556!important;
+  color: rgb(255, 255, 255) !important;
+
+}
+
 h1 {
   font-family: Basalt !important;
   color: rgb(255, 255, 255) !important;
@@ -361,4 +374,9 @@ button:disabled,
 button[disabled] {
   background-color : rgb(17, 10, 31, 0.4) !important;
 }
+
+.imgcard{
+  height:150px !important;
+}
+
 

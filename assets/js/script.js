@@ -112,7 +112,7 @@ function background() {
   } else if (round == 15) {
     document.body.style.backgroundImage = "url(assets/img/10.jpg)";
   } else if (round == 20) {
-    document.body.style.backgroundImage = "url(assets/img/2.png)";
+    document.body.style.backgroundImage = "url(assets/img/2.jpg)";
   } else if (round == 25) {
     document.body.style.backgroundImage = "url(assets/img/5.jpg)";
   } else if (round == 30) {
@@ -355,7 +355,7 @@ function CreateBadGuy() {
   if (round == 30) {
     var badGuy = new BadGuy("Void", 1000, 1000, 30, 40, "none", "sword");
   } else if (round == 20) {
-    var badGuy = new BadGuy("Araignée Géante Cracheuse De Feu", 750, 750, 30, 50, "none", "none")
+    var badGuy = new BadGuy("Ekrid", 750, 750, 30, 50, "none", "none")
   } else if (round == 10) {
     var badGuy = new BadGuy("Xonoth", 630, 630, 30, 32, "none", "none")
   } else {
