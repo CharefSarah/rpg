@@ -275,7 +275,7 @@ function ModalProgress(){
   }
   if(round==15){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "La nuit tombe quand vous arrivez pres de l'étang, vous y trouvez un marchand qui vous explique que l'invasion d'araignées a laquelle vous faites face vient du chateau proche d'ici ou leur reine a elu domicile. En bon shield-bearers vous decidez de liberer la region de cette menace.";
+    document.getElementById("modalProgressText").innerHTML = "La nuit tombe quand vous arrivez pres de l'étang, vous y trouvez un marchand qui vous explique que l'invasion d'araignées vient du chateau proche d'ici ou leur reine a elu domicile. En bon shield-bearers vous decidez de liberer la region de cette menace.";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
