@@ -237,6 +237,18 @@ h1 {
 
 }
 
+#dismissModalProgress {
+  margin : 5px;
+}
+
+@media (max-width: 760px) {
+  #modalProgress {
+    width: 22em;
+    margin-left: -11em;
+
+  }
+}
+
 #modalProgressBadge1 {
   height : 80px;
   width : auto;
