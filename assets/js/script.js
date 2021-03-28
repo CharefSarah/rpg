@@ -167,7 +167,7 @@ document.getElementById("dismissDeathEnnemy").addEventListener("click", function
 function ModalProgress(){
   if(round==2) {
     document.getElementById("modalProgressTitle").innerHTML = "A L'AVENTURE !";
-    document.getElementById("modalProgressText").innerHTML = "Votre periple commence depuis votre village, occupé par les forces de Void les shield-bearers decident de le liberer ! Attaquez les orques qui vous assiegent";
+    document.getElementById("modalProgressText").innerHTML = "Votre periple commence depuis votre village, occupé par les forces de Void les shield-bearers decident de le liberer ! <br>Attaquez les orques qui vous assiegent";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true";
@@ -175,7 +175,7 @@ function ModalProgress(){
   }
   if(round==3) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUE ! ";
-    document.getElementById("modalProgressText").innerHTML = "Vous avez vaincu les orques qui occupaient Myrefall ! A peine la bataille terminée vous entendez au loin les renfort de Xonoth arrivé !";
+    document.getElementById("modalProgressText").innerHTML = "Vous avez vaincu les orques qui occupaient Myrefall ! <br>A peine la bataille terminée vous entendez au loin les renfort de Xonoth arrivés !";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true";
