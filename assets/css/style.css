@@ -41,7 +41,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background-size: cover;
   color: rgb(255, 255, 255) !important;
-  background-image: url("../img/14.png");
+  background-image: url("../img/14.png") !important;
 }
 
 h1 {
@@ -189,6 +189,9 @@ h1 {
   border: 1px black solid;
   border-radius: 5px;
 }
+#buttons{
+  background: transparent !important;
+}
 
 #modalGameOverTitle {
   font-family: Basalt;
@@ -261,14 +264,14 @@ input {
   background: rgba(17, 10, 31, 0.822) !important;
   margin: 20px;
   border-radius: 5px;
-  height: 180px;
+  height: 160px;
 }
 
 .badguy {
   background: rgba(17, 10, 31, 0.822) !important;
   margin: 20px;
   border-radius: 5px;
-  height: 180px;
+  height: 160px;
   margin-top: 40px;
   position: absolute !important;
   right: 0;
@@ -293,11 +296,18 @@ input {
 }
 
 .jumbotron {
-  background : rgba(41, 2, 114, 0.527) !important;
-  margin: 30px;
+  background : rgba(17, 10, 31, 0.808) !important;
+  margin: 110px;
   border-radius: 10px;
 }
 
+@media (max-width: 760px) {
+  .jumbotron {
+    background : rgba(17, 10, 31, 0.781) !important;
+    margin: 30px;
+    border-radius: 10px;
+  }
+}
 
 #announcements {
   background : rgb(17, 10, 31,0.6) !important;
