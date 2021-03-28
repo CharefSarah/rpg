@@ -90,7 +90,7 @@ function togg1() {
 };
 
 // Consctructeur objet Hero.
-function Hero(name, health, maxHealth, defence, attack, weakness, resistance, lightAttack, bigAttack) {
+function Hero(name, health, maxHealth, defence, attack, weakness, resistance, lightAttack, bigAttack,image) {
   this.name = name;
   this.health = health;
   this.maxHealth = maxHealth;
@@ -100,6 +100,7 @@ function Hero(name, health, maxHealth, defence, attack, weakness, resistance, li
   this.resistance = resistance;
   this.lightAttack = lightAttack;
   this.bigAttack = bigAttack;
+  this.image = image;
 }
 // vie 
 var life = 3;
@@ -168,7 +169,6 @@ document.getElementById("dismissDeathEnnemy").addEventListener("click", function
 
 function ModalVictory() {
   chronoStop();
-  console.log(chronotime.value);
   document.getElementById("baseAttack").disabled = "true";
   document.getElementById("heavyAttack").disabled = "true";
   document.getElementById("potion").disabled = "true";
@@ -189,7 +189,6 @@ function ModalGameOver() {
   document.getElementById("baseAttack").disabled = "true";
   document.getElementById("heavyAttack").disabled = "true";
   document.getElementById("potion").disabled = "true";
-  console.log(chronotime.value);
   document.getElementById("modalGameOver").style.display = "block";
 }
 document.getElementById("dismissModalGameOver").addEventListener("click", function () {
@@ -288,6 +287,9 @@ function SetHeroValue() {
   document.getElementById("basicAttackName").innerHTML = hero.lightAttack;
   document.getElementById("bigAttackName").innerHTML = hero.bigAttack;
   document.getElementById("heroHealth").innerHTML = hero.health;
+  document.getElementById("heroImg").src = hero.image;
+
+
   health.setAttribute("value", hero.health);
   health.setAttribute("max", hero.maxHealth);
 }
@@ -298,7 +300,7 @@ var classSelectArray = document.querySelectorAll('.classSelect');
 var hero = classSelectArray.forEach(element => {
   element.addEventListener('click', function CreateHero() {
     if (element.id == "knight") {
-      hero = new Hero("Rodric", 500, 500, 30, 30, "thunder", "sword", "Coup d'épée", "Coup de bouclier");
+      hero = new Hero("Rodric", 500, 500, 30, 30, "thunder", "sword", "Coup d'épée", "Coup de bouclier","assets/img/knight.png");
       SetHeroValue();
       ButtonDisappear();
       displayLife();
@@ -309,7 +311,7 @@ var hero = classSelectArray.forEach(element => {
 
 
     } else if (element.id == "mage") {
-      hero = new Hero("Zorrun", 300, 300, 10, 40, "sword", "magic", "Eclair", "Mur de feu");
+      hero = new Hero("Zorrun", 300, 300, 10, 40, "sword", "magic", "Eclair", "Mur de feu","assets/img/mage.png");
       document.getElementById("heroHealth").innerHTML = hero.health;
       SetHeroValue();
       ButtonDisappear();
@@ -321,7 +323,7 @@ var hero = classSelectArray.forEach(element => {
 
 
     } else if (element.id == "rogue") {
-      hero = new Hero("Urim", 400, 400, 20, 35, "none", "none", "Attaque sournoise", "Assassinat");
+      hero = new Hero("Urim", 400, 400, 20, 35, "none", "none", "Attaque sournoise", "Assassinat","assets/img/urim.png");
       document.getElementById("heroHealth").innerHTML = hero.health;
       SetHeroValue();
       ButtonDisappear();
@@ -336,7 +338,7 @@ var hero = classSelectArray.forEach(element => {
 });
 
 //Constructeur objet Méchant.
-function BadGuy(name, health, maxHealth, defence, attack, weakness, resistance) {
+function BadGuy(name, health, maxHealth, defence, attack, weakness, resistance,image) {
   this.name = name;
   this.health = health;
   this.maxHealth = maxHealth;
@@ -344,22 +346,23 @@ function BadGuy(name, health, maxHealth, defence, attack, weakness, resistance) 
   this.attack = attack;
   this.weakness = weakness;
   this.resistance = resistance;
+  this.image = image;
 }
 
 // Compteur de round
-var round = 1;
+var round = 20;
 document.getElementById("round").innerHTML = round;
 
 //Creation du méchant selon le nombre de round: 
 function CreateBadGuy() {
   if (round == 30) {
-    var badGuy = new BadGuy("Void", 1000, 1000, 30, 40, "none", "sword");
+    var badGuy = new BadGuy("Void", 1000, 1000, 30, 40, "none", "sword","assets/img/darkknight.png");
   } else if (round == 20) {
-    var badGuy = new BadGuy("Araignée Géante Cracheuse De Feu", 750, 750, 30, 50, "none", "none")
+    var badGuy = new BadGuy("Araigné", 750, 750, 30, 50, "none", "none","assets/img/spider.png")
   } else if (round == 10) {
-    var badGuy = new BadGuy("Xonoth", 630, 630, 30, 32, "none", "none")
+    var badGuy = new BadGuy("Xonoth", 630, 630, 30, 32, "none", "none","assets/img/wolf.png")
   } else {
-    var badGuy = new BadGuy("Orc", 300, 300, 10, 30, "all", "none");
+    var badGuy = new BadGuy("Orc", 300, 300, 10, 30, "all", "none","assets/img/orc.png");
   }
   return badGuy
 }
@@ -370,6 +373,7 @@ function DisplayBadGuy() {
   badGuyHealth.value = badGuy.health;
   badGuyHealth.setAttribute("value", badGuy.health);
   badGuyHealth.setAttribute("max", badGuy.health);
+  document.getElementById("badguyImg").src = badGuy.image;
 
 }
 
@@ -439,7 +443,6 @@ function Dodge() {
   if (dodge <= 10) {
     ennemyDamage = 0;
     displayEvent("- Vous avez esquivé!");
-    console.log("Esquivé");
   } else {
     ennemyDamage = badGuy.attack;
     displayEvent("- L'ennemi a contre attaqué, vous avez pris " + ennemyDamage + " dégats");
@@ -528,7 +531,6 @@ window.addEventListener("load", function () {
 document.getElementById("potion").addEventListener("click", function () {
   if (stockPotion > 0) {
     heroHealthToGet = hero.health + 50;
-    console.log(heroHealthToGet);
     if (hero.health < hero.maxHealth && heroHealthToGet < hero.maxHealth) {
       hero.health = hero.health + 50;
       stockPotion--;
@@ -554,10 +556,14 @@ function addPotion() {
 
 $(document).ready(function () {
   $("#baseAttack").click(function () {
-    $(".badguy").effect("shake",{times:2}, 400);
+    $(".badguyImg").effect("shake",{times:2}, 400);
+    $(".heroImg").effect("shake",{times:1},120);
+    
   });
   $("#heavyAttack").click(function () {
-    $(".badguy").effect("shake",{times:3}, 300);
+    $(".badguyImg").effect("shake",{times:3}, 300);
+    $(".heroImg").effect("shake",{times:1},260);
+
   });
 });
 

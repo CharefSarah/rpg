@@ -190,7 +190,8 @@ h1 {
   border: 1px black solid;
   border-radius: 5px;
 }
-#buttons{
+
+#buttons {
   background: transparent !important;
 }
 
@@ -208,6 +209,7 @@ h1 {
   box-sizing: border-box;
   width: 200px;
   height: 20px;
+  margin-top: 20px;
   padding: 5px;
   background: rgb(255, 255, 255);
   border-radius: 5px;
@@ -260,93 +262,88 @@ input {
 
 }
 
-
 .hero {
   background: rgba(17, 10, 31, 0.822) !important;
-  margin: 20px;
   border-radius: 5px;
   height: 160px;
 }
 
 .badguy {
   background: rgba(17, 10, 31, 0.822) !important;
-  margin: 20px;
-  border-radius: 5px;
   height: 160px;
-  margin-top: 40px;
-  position: absolute !important;
-  right: 0;
-  margin-bottom: 150px !important;
+  border-radius: 5px;
 
 }
 
 @media (max-width: 760px) {
   .hero {
     margin-left: 0;
-    padding-left: 15% !important;
     width: auto;
     border-radius: 0 5px 5px 0;
   }
 
   .badguy {
     margin-right: 0;
-    border-radius: 5px 0 0 5px;
-    margin-bottom: 350px !important;
-    position: fixed;
+    /* position : absolute !important;
+    right : 0; */
+    margin-top: 50px !important;
+    float: right !important;
+    width: 65%;
+    margin-left: 35%;
   }
 }
 
 .jumbotron {
-  background : rgba(17, 10, 31, 0.808) !important;
+  background: rgba(17, 10, 31, 0.808) !important;
   margin: 110px;
   border-radius: 10px;
 }
 
 @media (max-width: 760px) {
   .jumbotron {
-    background : rgba(17, 10, 31, 0.781) !important;
+    background: rgba(17, 10, 31, 0.781) !important;
     margin: 30px;
     border-radius: 10px;
   }
 }
 
 #announcements {
-  background : rgb(17, 10, 31,0.6) !important;
-  color : white;
-  height : 250px;
+  background: rgb(17, 10, 31, 0.6) !important;
+  color: white;
+  height: 250px;
   overflow-x: hidden !important;
   width: 500px;
   border-radius: 5px;
   border: 1px black solid;
   line-height: 150%;
-  margin-bottom : 15px !important;
+  margin-bottom: 15px !important;
 }
 
 @media (max-width:760px) {
   #announcements {
-    display : none !important;
+    display: none !important;
   }
 }
 
 html::-webkit-scrollbar {
-	width: 0.5rem;
-	background-color: white;
+  width: 0.5rem;
+  background-color: white;
 }
 
 html::-webkit-scrollbar-thumb {
-	background: rgb(17, 10, 31);
+  background: rgb(17, 10, 31);
 }
 
 @media (max-width: 760px) {
   .footer {
-    position : fixed;
-    left:0;
-    bottom:0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
   }
 }
 
 #heroName {
-  font-size : 36px;
+  font-size: 36px;
 }
 
 .choice {
@@ -354,11 +351,46 @@ html::-webkit-scrollbar-thumb {
 }
 
 #badGuyName {
-  font-size : 28px;
+  font-size: 28px;
 }
 
 button:disabled,
 button[disabled] {
-  background-color : rgb(17, 10, 31, 0.4) !important;
+  background-color: rgb(17, 10, 31, 0.4) !important;
 }
 
+.badguyImg {
+  height: 140px;
+  width: auto;
+  float: left;
+  margin-right: -100%;
+  margin-left: -8%;
+  margin-top: -20%;
+}
+
+.heroImg {
+  height: 140px;
+  width: auto;
+  float: right;
+  margin-left: -100%;
+  margin-right: -8%;
+  margin-top: -20%;
+}
+
+@media (max-width:760px) {
+  .heroImg {
+    height: 140px;
+    width: auto;
+    float: right;
+    margin-left: -100%;
+    margin-top: -20%;
+  }
+}
+
+@keyframes hinge {
+	0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }	
+	20%, 60% { transform: rotate(80deg); transform-origin: top left; animation-timing-function: ease-in-out; }	
+	40% { transform: rotate(60deg); transform-origin: top left; animation-timing-function: ease-in-out; }	
+	80% { transform: rotate(60deg) translateY(0); opacity: 1; transform-origin: top left; animation-timing-function: ease-in-out; }	
+	100% { transform: translateY(700px); opacity: 0; }
+}
