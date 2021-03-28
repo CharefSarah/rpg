@@ -268,6 +268,7 @@ h1 {
   background: transparent !important;
 }
 
+
 #modalGameOverTitle {
   font-family: Basalt;
   font-size: 36px;
@@ -357,12 +358,16 @@ input {
 
   .badguy {
     margin-right: 0;
-    /* position : absolute !important;
-    right : 0; */
     margin-top: 50px !important;
     float: right !important;
     width: 65%;
     margin-left: 35%;
+  }
+}
+@media(max-width:410px){
+  .badguy {
+    width : 75%;
+    margin-left : 25%;
   }
 }
 
@@ -567,4 +572,12 @@ section .section-title {
 }
 .card{
   background: rgba(17, 10, 31, 0.712) !important;
+}
+
+
+@media (max-width: 410px) {
+  #baseAttack,#heavyAttack,#potion {
+    margin-bottom : 100px !important;
+  }
+
 }
