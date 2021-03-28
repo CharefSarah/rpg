@@ -167,7 +167,7 @@ document.getElementById("dismissDeathEnnemy").addEventListener("click", function
 function ModalProgress(){
   if(round==2) {
     document.getElementById("modalProgressTitle").innerHTML = "A L'AVENTURE !";
-    document.getElementById("modalProgressText").innerHTML = "Votre periple commence depuis votre village, occupé par les forces de Void les shield-bearers decident de le liberer ! <br>Attaquez les orques qui vous assiegent";
+    document.getElementById("modalProgressText").innerHTML = "Votre périple commence depuis Myrefall, occupé par les forces de Void les shield-bearers décident de le libérer ! <br>Attaquez les orques qui vous assiègent";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true";
@@ -183,7 +183,7 @@ function ModalProgress(){
   }
   if(round==4) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ !";
-    document.getElementById("modalProgressText").innerHTML = "Vous avez repoussé les renforts orques et vous remarquez que leur traces remontent jusqu'au marais, sur la route vous croisez une seconde vague.";
+    document.getElementById("modalProgressText").innerHTML = "Vous avez repoussé les renforts orques et vous remarquez que leurs traces remontent jusqu'au marais, sur la route vous croisez une seconde vague.";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true";
@@ -191,7 +191,7 @@ function ModalProgress(){
   }
   if(round==5) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ !";
-    document.getElementById("modalProgressText").innerHTML = "Encore d'autres orques vaincus ! Aprés cette recente bataille vous arrivez enfin au aux abords des marais bordant Myrefall... <br>Ils grouillent d'orques !";
+    document.getElementById("modalProgressText").innerHTML = "Encore d'autres orques vaincus ! Après cette récente bataille vous arrivez enfin aux abords des marais bordant Myrefall... <br>Ils grouillent d'orques !";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true";
@@ -199,7 +199,7 @@ function ModalProgress(){
   }
   if(round==6) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ !";
-    document.getElementById("modalProgressText").innerHTML = "Vous et vos compagnons Shield-bearers vous enfoncez dans les marais, les orques vous encerclent, la bataille sera dur mais vous entendez déja au loin les rugissement de Xonoth";
+    document.getElementById("modalProgressText").innerHTML = "Vous et vos compagnons Shield-bearers vous enfoncez dans les marais, les orques vous encerclent, la bataille sera dure, mais vous entendez déjà au loin les rugissements de Xonoth";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true";
@@ -207,7 +207,7 @@ function ModalProgress(){
   }
   if(round==7) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ !";
-    document.getElementById("modalProgressText").innerHTML = "Orque aprés orque vous vous approchez de leur chef";
+    document.getElementById("modalProgressText").innerHTML = "Orque après orque vous vous approchez de leur chef";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true";
@@ -215,7 +215,7 @@ function ModalProgress(){
   }
   if(round==8){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ !";
-    document.getElementById("modalProgressText").innerHTML = "Aprés d'autres combats le chemin se degage, Vous voyez la sortie des marais... Une foret de la quelle sort les cris de Xonoth !";
+    document.getElementById("modalProgressText").innerHTML = "Après d'autres combats le chemin se dégage, Vous voyez la sortie des marais... Une forêt de laquelle sort les cris de Xonoth !";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true";
@@ -223,7 +223,7 @@ function ModalProgress(){
   }
   if(round==9){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ !";
-    document.getElementById("modalProgressText").innerHTML = "La sortie est proche, Xonoth envoi ses dernieres troupes alors qu'il attend patiemment dans la foret.";
+    document.getElementById("modalProgressText").innerHTML = "La sortie est proche, Xonoth envoie ses dernières troupes alors qu'il attend patiemment dans la forêt.";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true";
@@ -231,7 +231,7 @@ function ModalProgress(){
   }
   if(round==10){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ !";
-    document.getElementById("modalProgressText").innerHTML = "Vous avez vaincu les derniers orques des forces de Xonoth, a son tour maintenant !";
+    document.getElementById("modalProgressText").innerHTML = "Vous avez vaincu les derniers orques des forces de Xonoth, à son tour maintenant !";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true"; 
@@ -239,7 +239,7 @@ function ModalProgress(){
   }
   if(round==11){
     document.getElementById("modalProgressTitle").innerHTML = "BRAVO";
-    document.getElementById("modalProgressText").innerHTML = "Aprés un difficile combat, Les shield-bearers ont vaincu Xonoth! <br> Sur son corps vous trouvez les ordres que Void lui a donné et vous decidez de remonter la piste";
+    document.getElementById("modalProgressText").innerHTML = "Après un difficile combat, les Shield-bearers ont vaincu Xonoth! <br> Sur son corps vous trouvez les ordres que Void lui a donné et vous décidez de remonter la piste.";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -248,7 +248,7 @@ function ModalProgress(){
   }
   if(round==12){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Grace aux ordres trouvé sur Xonoth vous decidez d'aller jusqu'au chateau du lac d'argent au nord d'ici. Mais vous devez d'abord sortir de la foret dans lequel, en l'absence des orques, les araignées ont repris leurs droits...";
+    document.getElementById("modalProgressText").innerHTML = "Grace aux ordres trouvés sur Xonoth vous décidez d'aller jusqu'au château du lac d'argent au nord d'ici. Mais vous devez d'abord sortir de la forêt dans laquelle, en l'absence des orques, les araignées ont repris leurs droits...";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -257,7 +257,7 @@ function ModalProgress(){
   }
   if(round==13){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Vous continuez votre chemin dans la funeste foret, mais mefiez vous... Dans les branches au dessus vous entendez les cliquetis caracteristique des pattes d'araignées...";
+    document.getElementById("modalProgressText").innerHTML = "Vous continuez votre chemin dans la funeste forêt, mais mefiez vous... Dans les branches au-dessus vous entendez les cliquetis caracteristiques des pattes d'araignées...";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -266,7 +266,7 @@ function ModalProgress(){
   }
   if(round==14) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Vous arrivez bientot pres d'un point d'eau, encore quelques metres et vous pourrez enfin vous reposer... ATTENTION!";
+    document.getElementById("modalProgressText").innerHTML = "Vous arrivez bientôt près d'un point d'eau, encore quelques métres et vous pourrez enfin vous reposer... ATTENTION!";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -275,7 +275,7 @@ function ModalProgress(){
   }
   if(round==15){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "La nuit tombe quand vous arrivez pres de l'étang, vous y trouvez un marchand qui vous explique que l'invasion d'araignées vient du chateau proche d'ici ou leur reine a elu domicile. En bon Shield-bearers vous decidez de liberer la region de cette menace.";
+    document.getElementById("modalProgressText").innerHTML = "La nuit tombe quand vous arrivez prés de l'étang, vous y trouvez un marchand qui vous explique que l'invasion d'araignées vient du château proche d'ici où leur reine a élu domicile. En bon Shield-bearers vous décidez de libérer la région de cette menace.";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -284,7 +284,7 @@ function ModalProgress(){
   }
   if(round==16){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Le nombre d'araignées grandit a mesure que vous vous approchez de leur tanniére. <br>Tenez bon !";
+    document.getElementById("modalProgressText").innerHTML = "Le nombre d'araignées grandit à mesure que vous approchez de leur tanniére. <br>Tenez bon !";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -302,7 +302,7 @@ function ModalProgress(){
   }
   if(round==18){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Au loin se dessine la silhouette du chateau occupé par la reine araignée ! Continuez comme ça shield-bearers !";
+    document.getElementById("modalProgressText").innerHTML = "Au loin se dessine la silhouette du château occupé par la reine araignée ! Continuez comme ça Shield-bearers !";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -311,7 +311,7 @@ function ModalProgress(){
   }
   if(round==19) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Vous avez vaincu presques toutes les araignées autour du chateau, La porte est ouverte et vous entendez leur reine, Eukrid, a l'interieur. <br> A l'attaque !";
+    document.getElementById("modalProgressText").innerHTML = "Vous avez vaincu presque toutes les araignées autour du chateau, La porte est ouverte et vous entendez leur reine, Ekrid, à l'interieur. <br> A l'attaque !";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -320,7 +320,7 @@ function ModalProgress(){
   }
   if(round==20){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Vous arrivez enfin devant Eukrid, Debarrassez la région de ce Fléau !";
+    document.getElementById("modalProgressText").innerHTML = "Vous arrivez enfin devant Ekrid. Débarrassez la région de ce fléau !";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -339,7 +339,7 @@ function ModalProgress(){
   }
   if(round==22) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Vous partez du chateau d'Eukrid en direction de Void mais il est déja au courant de votre venue... Il a lui meme envoyé son armée de mort-vivant vous arretez";
+    document.getElementById("modalProgressText").innerHTML = "Vous partez du chateau d'Ekrid en direction de Void mais il est déjà au courant de votre venue... Il a lui meme envoyé son armée de mort-vivants vous arrêtez";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png";
     document.getElementById("modalProgressBadge2").src="assets/img/badge2.png";
     document.getElementById("baseAttack").disabled = "true";
@@ -349,7 +349,7 @@ function ModalProgress(){
   }
   if(round==23){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Les premiers mort-vivants vaincus, vous vous rendez compte qu'arrivait jusqu'au chateau de Void ne sera pas une mince affaire. <br> Tenez bon Shield-bearers !";
+    document.getElementById("modalProgressText").innerHTML = "Les premiers mort-vivants vaincus, vous vous rendez compte qu'arriver jusqu'au château de Void ne sera pas une mince affaire. <br> Tenez bon Shield-bearers !";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png";
     document.getElementById("modalProgressBadge2").src="assets/img/badge2.png";
     document.getElementById("baseAttack").disabled = "true";
@@ -359,7 +359,7 @@ function ModalProgress(){
   }
   if(round==24){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Vous y etes presques, Les rangs des mort vivant s'amenuisent tandis que vous avancez en direction des terres de Void";
+    document.getElementById("modalProgressText").innerHTML = "Vous y etes presque ! Les rangs des mort-vivants s'amenuisent tandis que vous avancez en direction des terres de Void.";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png";
     document.getElementById("modalProgressBadge2").src="assets/img/badge2.png";
     document.getElementById("baseAttack").disabled = "true";
@@ -369,7 +369,7 @@ function ModalProgress(){
   }
   if(round==25) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Vous voila arrivé dans les terribles terres de Void, au loin son chateau domine tout son royaume. C'est la derniére ligne droite pour vous !";
+    document.getElementById("modalProgressText").innerHTML = "Vous voilà arrivé dans les terribles terres de Void, au loin son chateau domine tout son royaume. C'est la derniére ligne droite pour vous !";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png";
     document.getElementById("modalProgressBadge2").src="assets/img/badge2.png";
     document.getElementById("baseAttack").disabled = "true";
@@ -379,7 +379,7 @@ function ModalProgress(){
   }
   if(round==26) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Vous grimpez les escarpements autour du chateau, toujours assaili par les mort-vivants que Void ne cesse d'envoyer... Mais vous avancez !";
+    document.getElementById("modalProgressText").innerHTML = "Vous grimpez les escarpements autour du château, toujours assailli par les mort-vivants que Void ne cesse d'envoyer... Mais vous avancez !";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png";
     document.getElementById("modalProgressBadge2").src="assets/img/badge2.png";
     document.getElementById("baseAttack").disabled = "true";
@@ -389,7 +389,7 @@ function ModalProgress(){
   }
   if(round==27){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Presque ! Vous sentez déja le souffre se degager de l'antre de Void tandis que les derniers mort-vivants vous barrent encore la route, <br> Liberer le monde de son Joug ! Foncez !";
+    document.getElementById("modalProgressText").innerHTML = "Presque ! Vous sentez déjà le soufre se dégager de l'antre de Void tandis que les derniers mort-vivants vous barrent encore la route. <br> Liberer le monde de son joug ! Foncez !";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png";
     document.getElementById("modalProgressBadge2").src="assets/img/badge2.png";
     document.getElementById("baseAttack").disabled = "true";
@@ -399,7 +399,7 @@ function ModalProgress(){
   }
   if(round==28){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Les portes de son chateau n'ont jamais été aussi proches... Bon courage aventurier !";
+    document.getElementById("modalProgressText").innerHTML = "Les portes de son château n'ont jamais été aussi proches... Bon courage aventurier !";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png";
     document.getElementById("modalProgressBadge2").src="assets/img/badge2.png";
     document.getElementById("baseAttack").disabled = "true";
@@ -409,7 +409,7 @@ function ModalProgress(){
   }
   if(round==29){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Se dresse devant vous les derniers mort-vivants de l'armée de void, une formalité avant le combat final...";
+    document.getElementById("modalProgressText").innerHTML = "Se dresse devant vous les derniers mort-vivants de l'armée de Void, une formalité avant le combat final...";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png";
     document.getElementById("modalProgressBadge2").src="assets/img/badge2.png";
     document.getElementById("baseAttack").disabled = "true";
@@ -419,7 +419,7 @@ function ModalProgress(){
   }
   if(round==30) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Vous voila nez a nez avec le mal incarné, sauvez Myrefall et le reste du monde de son emprise ! ";
+    document.getElementById("modalProgressText").innerHTML = "Vous voilà nez à nez avec le mal incarné, sauvez Myrefall et le reste du monde de son emprise ! ";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png";
     document.getElementById("modalProgressBadge2").src="assets/img/badge2.png";
     document.getElementById("baseAttack").disabled = "true";
@@ -429,7 +429,7 @@ function ModalProgress(){
   }
   if(round==31) {
     document.getElementById("modalProgressTitle").innerHTML = "VICTOIRE";
-    document.getElementById("modalProgressText").innerHTML = "Vous avez vaincu le terrible Void ! Les shield-bearers ont liberer le monde de la domination des forces du mal.<br> Une fois trépassé vous decouvrez la source de son pouvoir, la flamme magique d'Ardath, elle est a vous desormais...";
+    document.getElementById("modalProgressText").innerHTML = "Vous avez vaincu le terrible Void ! Les shield-bearers ont libérer le monde de la domination des forces du mal.<br> Une fois trépassé vous découvrez la source de son pouvoir, la flamme magique d'Ardath, elle est à vous désormais...";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png";
     document.getElementById("modalProgressBadge2").src="assets/img/badge2.png";
     document.getElementById("modalProgressBadge3").src="assets/img/badge3.png";
