@@ -113,7 +113,7 @@ function background() {
   } else if (round == 15) {
     document.body.style.backgroundImage = "url(assets/img/10.jpg)";
   } else if (round == 20) {
-    document.body.style.backgroundImage = "url(assets/img/2.png)";
+    document.body.style.backgroundImage = "url(assets/img/2.jpg)";
   } else if (round == 25) {
     document.body.style.backgroundImage = "url(assets/img/5.jpg)";
   } else if (round == 30) {
@@ -358,7 +358,7 @@ function CreateBadGuy() {
   if (round == 30) {
     var badGuy = new BadGuy("Void", 1000, 1000, 30, 40, "none", "sword","assets/img/darkknight.png");
   } else if (round == 20) {
-    var badGuy = new BadGuy("Araigné", 750, 750, 30, 50, "none", "none","assets/img/spider.png")
+    var badGuy = new BadGuy("Ekrid", 750, 750, 30, 50, "none", "none","assets/img/spider.png")
   } else if (round == 10) {
     var badGuy = new BadGuy("Xonoth", 630, 630, 30, 32, "none", "none","assets/img/wolf.png")
   } else {
