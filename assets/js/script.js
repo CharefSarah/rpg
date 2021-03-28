@@ -555,10 +555,10 @@ function addPotion() {
 
 $(document).ready(function () {
   $("#baseAttack").click(function () {
-    $(".badguy").effect("shake",{times:2}, 400,);
+    $(".badguy").effect("shake",{times:2}, 400);
   });
   $("#heavyAttack").click(function () {
-    $(".badguy").effect("shake",{times:3}, 300,);
+    $(".badguy").effect("shake",{times:3}, 300);
   });
 });
 
