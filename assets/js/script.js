@@ -167,15 +167,15 @@ document.getElementById("dismissDeathEnnemy").addEventListener("click", function
 function ModalProgress(){
   if(round==2) {
     document.getElementById("modalProgressTitle").innerHTML = "A L'AVENTURE !";
-    document.getElementById("modalProgressText").innerHTML = "Votre periple commence depuis votre village, occupé par les forces de Void, les shield-bearers decident de le liberer ! Attaquez les orques qui vous assiegent";
+    document.getElementById("modalProgressText").innerHTML = "Votre periple commence depuis votre village, occupé par les forces de Void les shield-bearers decident de le liberer ! <br>Attaquez les orques qui vous assiegent";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true";
     document.getElementById("modalProgress").style.display = "block";
   }
   if(round==3) {
-    document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ ! ";
-    document.getElementById("modalProgressText").innerHTML = "Vous avez vaincu les orques qui occupaient Myrefall ! A peine la bataille terminée vous entendez au loin les renfort de Xonoth arrivé !";
+    document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUE ! ";
+    document.getElementById("modalProgressText").innerHTML = "Vous avez vaincu les orques qui occupaient Myrefall ! <br>A peine la bataille terminée vous entendez au loin les renfort de Xonoth arrivés !";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true";
@@ -191,7 +191,7 @@ function ModalProgress(){
   }
   if(round==5) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ !";
-    document.getElementById("modalProgressText").innerHTML = "Encore d'autres orques vaincus ! Aprés cette recente bataille vous arrivez enfin au aux abords des marais bordant Myrefall... Ils grouillent d'orques !";
+    document.getElementById("modalProgressText").innerHTML = "Encore d'autres orques vaincus ! Aprés cette recente bataille vous arrivez enfin au aux abords des marais bordant Myrefall... <br>Ils grouillent d'orques !";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true";
@@ -215,7 +215,7 @@ function ModalProgress(){
   }
   if(round==8){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ !";
-    document.getElementById("modalProgressText").innerHTML = "Aprés d'autres combats le chemin se degage, vous voyez au loin a la sortie des marais une foret, de la quelle sort les bruits d'autres orques et de leur chef.";
+    document.getElementById("modalProgressText").innerHTML = "Aprés d'autres combats le chemin se degage, Vous voyez la sortie des marais... Une foret de la quelle sort les cris de Xonoth !";
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
     document.getElementById("potion").disabled = "true";
@@ -257,7 +257,7 @@ function ModalProgress(){
   }
   if(round==13){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Vous continuez votre chemin dans la funeste foret, mais mefiez vous... Dans les branches au dessus vous entendez le cliqueti caracteristique des pattes d'araignées...";
+    document.getElementById("modalProgressText").innerHTML = "Vous continuez votre chemin dans la funeste foret, mais mefiez vous... Dans les branches au dessus vous entendez les cliquetis caracteristique des pattes d'araignées...";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -266,7 +266,7 @@ function ModalProgress(){
   }
   if(round==14) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Vous arrivez bientot pres d'un point d'eau, encore quelques metres et vous pourrez vous reposer... ATTENTION!";
+    document.getElementById("modalProgressText").innerHTML = "Vous arrivez bientot pres d'un point d'eau, encore quelques metres et vous pourrez enfin vous reposer... ATTENTION!";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -275,7 +275,7 @@ function ModalProgress(){
   }
   if(round==15){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "La nuit tombe quand vous arrivez pres de l'étang, vous y trouvez un marchand qui vous explique que l'invasion d'araignées vient du chateau proche d'ici ou leur reine a elu domicile. En bon shield-bearers vous decidez de liberer la region de cette menace.";
+    document.getElementById("modalProgressText").innerHTML = "La nuit tombe quand vous arrivez pres de l'étang, vous y trouvez un marchand qui vous explique que l'invasion d'araignées vient du chateau proche d'ici ou leur reine a elu domicile. En bon Shield-bearers vous decidez de liberer la region de cette menace.";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -284,7 +284,7 @@ function ModalProgress(){
   }
   if(round==16){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Le nombre d'araignée grandit a mesure que vous vous approchez de leur tanniére, tenez bon !";
+    document.getElementById("modalProgressText").innerHTML = "Le nombre d'araignées grandit a mesure que vous vous approchez de leur tanniére. <br>Tenez bon !";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -293,7 +293,7 @@ function ModalProgress(){
   }
   if(round==17){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Entre quelques combats vous trouvez le temps de vous reposer, mais les araignées, elles, ne connaissent pas la fatigue";
+    document.getElementById("modalProgressText").innerHTML = "Entre quelques combats vous trouvez le temps de vous reposer, mais les araignées, elles, ne connaissent pas la fatigue...";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -320,7 +320,7 @@ function ModalProgress(){
   }
   if(round==20){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Vous arrivez enfin devant Eukrid, Debarassez la région de ce Fléau !";
+    document.getElementById("modalProgressText").innerHTML = "Vous arrivez enfin devant Eukrid, Debarrassez la région de ce Fléau !";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png"
     document.getElementById("baseAttack").disabled = "true";
     document.getElementById("heavyAttack").disabled = "true";
@@ -349,7 +349,7 @@ function ModalProgress(){
   }
   if(round==23){
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUÉ";
-    document.getElementById("modalProgressText").innerHTML = "Les premiers mort-vivants vaincus vous vous rendez compte qu'arrivait jusqu'au chateau de Void ne sera pas une mince affaire. <br> Tenez bon Shield-bearers !";
+    document.getElementById("modalProgressText").innerHTML = "Les premiers mort-vivants vaincus, vous vous rendez compte qu'arrivait jusqu'au chateau de Void ne sera pas une mince affaire. <br> Tenez bon Shield-bearers !";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png";
     document.getElementById("modalProgressBadge2").src="assets/img/badge2.png";
     document.getElementById("baseAttack").disabled = "true";
