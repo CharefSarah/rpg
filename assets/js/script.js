@@ -267,6 +267,7 @@ function LostLife() {
     life = life - 1;
     displayLife();
     hero.health = hero.maxHealth;
+    document.getElementById("heroHealth").innerHTML = hero.health;
   }
 }
 
@@ -350,7 +351,7 @@ function BadGuy(name, health, maxHealth, defence, attack, weakness, resistance,i
 }
 
 // Compteur de round
-var round = 20;
+var round = 1;
 document.getElementById("round").innerHTML = round;
 
 //Creation du méchant selon le nombre de round: 
@@ -358,11 +359,17 @@ function CreateBadGuy() {
   if (round == 30) {
     var badGuy = new BadGuy("Void", 1000, 1000, 30, 40, "none", "sword","assets/img/darkknight.png");
   } else if (round == 20) {
-    var badGuy = new BadGuy("Ekrid", 750, 750, 30, 50, "none", "none","assets/img/spider.png")
+    var badGuy = new BadGuy("Ekrid", 750, 750, 30, 50, "none", "none","assets/img/spider.png");
   } else if (round == 10) {
-    var badGuy = new BadGuy("Xonoth", 630, 630, 30, 32, "none", "none","assets/img/wolf.png")
-  } else {
-    var badGuy = new BadGuy("Orc", 300, 300, 10, 30, "all", "none","assets/img/orc.png");
+    var badGuy = new BadGuy("Xonoth", 630, 630, 30, 32, "none", "none","assets/img/wolf.png");
+  } else if ( round == 1 || round == 2 || round == 3 || round == 4 || round == 5 || round == 6 || round == 7 || round == 8 || round == 9 ) {
+      var badGuy = new BadGuy("Orc", 300, 300, 10, 30, "all", "none","assets/img/orc.png");
+  } else if ( round == 11 || round == 12 || round == 13 || round == 14 || round == 15 || round == 16 || round == 17 || round == 18 || round == 19 ) {
+    var badGuy = new BadGuy("Araignée",300, 300, 10, 30, "all", "none","assets/img/spider1.png");
+  } 
+  else {
+    var badGuy = new BadGuy("Squelette",300, 300, 10, 30, "all", "none","assets/img/skull.png");
+
   }
   return badGuy
 }
@@ -475,7 +482,7 @@ document.getElementById("baseAttack").addEventListener("click", function baseAtt
   document.getElementById("heroHealth").innerHTML = hero.health;
   LostBasicAttack();
   MoveEnnemyHealthBar();
-  setTimeout(MoveAllyHealthBar, 800);
+  setTimeout(MoveAllyHealthBar, 300);
   DeathHero();
   LostLife();
   EndGame();
@@ -497,7 +504,7 @@ document.getElementById("heavyAttack").addEventListener("click", function heavyA
   document.getElementById("heroHealth").innerHTML = hero.health;
   LostBigAttack();
   MoveEnnemyHealthBar();
-  setTimeout(MoveAllyHealthBar, 800);
+  setTimeout(MoveAllyHealthBar, 300);
   EndGame();
   LostLife();
   DeathHero();
@@ -530,7 +537,7 @@ window.addEventListener("load", function () {
 // Function pour utiliser des potions tant qu'il en reste
 document.getElementById("potion").addEventListener("click", function () {
   if (stockPotion > 0) {
-    heroHealthToGet = hero.health + 50;
+    heroHealthToGet = hero.health + 49;
     if (hero.health < hero.maxHealth && heroHealthToGet < hero.maxHealth) {
       hero.health = hero.health + 50;
       stockPotion--;
@@ -539,10 +546,10 @@ document.getElementById("potion").addEventListener("click", function () {
       document.getElementById("stockPotion").innerHTML = stockPotion;
       MoveAllyHealthBar();
     } else {
-      displayEvent("- Vous n'avez pas besoin de potion !")
+      displayEvent("- Vous n'avez pas besoin de potion.")
     }
   } else {
-    displayEvent("- Vous n'avez plus assez de potion")
+    displayEvent("- Vous n'avez plus assez de potion.")
   }
 });
 
