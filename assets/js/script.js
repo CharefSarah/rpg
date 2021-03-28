@@ -646,11 +646,11 @@ document.getElementById("round").innerHTML = round;
 //Creation du méchant selon le nombre de round: 
 function CreateBadGuy() {
   if (round == 30) {
-    var badGuy = new BadGuy("Void", 1000, 1000, 30, 40, "none", "sword","assets/img/darkknight.png");
+    var badGuy = new BadGuy("Void", 1500, 1000, 30, 40, "none", "sword","assets/img/darkknight.png");
   } else if (round == 20) {
-    var badGuy = new BadGuy("Ekrid", 750, 750, 30, 50, "none", "none","assets/img/spider.png");
+    var badGuy = new BadGuy("Ekrid", 850, 750, 30, 50, "none", "none","assets/img/spider.png");
   } else if (round == 10) {
-    var badGuy = new BadGuy("Xonoth", 630, 630, 30, 32, "none", "none","assets/img/wolf.png");
+    var badGuy = new BadGuy("Xonoth", 730, 630, 30, 32, "none", "none","assets/img/wolf.png");
   } else if ( round == 1 || round == 2 || round == 3 || round == 4 || round == 5 || round == 6 || round == 7 || round == 8 || round == 9 ) {
       var badGuy = new BadGuy("Orque", 300, 300, 10, 30, "all", "none","assets/img/orc.png");
   } else if ( round == 11 || round == 12 || round == 13 || round == 14 || round == 15 || round == 16 || round == 17 || round == 18 || round == 19 ) {
