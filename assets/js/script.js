@@ -419,7 +419,7 @@ function ModalProgress(){
   }
   if(round==30) {
     document.getElementById("modalProgressTitle").innerHTML = "BIEN JOUE";
-    document.getElementById("modalProgressText").innerHTML = "Vous franchissez les portes de son chateau quand un autre de ses guerriers squelette vous saute dessus ! ";
+    document.getElementById("modalProgressText").innerHTML = "Vous voila nez a nez avec le mal incarné, sauvez Myrefall et le reste du monde de son emprise ! ";
     document.getElementById("modalProgressBadge1").src = "assets/img/badge1.png";
     document.getElementById("modalProgressBadge2").src="assets/img/badge2.png";
     document.getElementById("baseAttack").disabled = "true";
@@ -640,7 +640,7 @@ function BadGuy(name, health, maxHealth, defence, attack, weakness, resistance,i
 }
 
 // Compteur de round
-var round = 1;
+var round = 29;
 document.getElementById("round").innerHTML = round;
 
 //Creation du méchant selon le nombre de round: 
