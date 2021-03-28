@@ -60,7 +60,7 @@ body {
 
 }
 
-h1, h5 {
+h1 {
   font-family: Basalt !important;
   color: rgb(255, 255, 255) !important;
   margin-left: 15px !important;
@@ -204,6 +204,52 @@ h1, h5 {
   display: none;
   border: 1px black solid;
   border-radius: 5px;
+}
+
+
+
+#modalProgress {
+  z-index: 7;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 30em;
+  height: auto;
+  margin-top: -9em;
+  /*set to a negative number 1/2 of your height*/
+  margin-left: -15em;
+  /*set to a negative number 1/2 of your width*/
+  background-color: white;
+  color: black;
+  display: none;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+#modalProgressTitle {
+  font-family: Basalt;
+  font-size: 36px;
+}
+
+#modalProgressText {
+  font-size: 20px;
+
+}
+
+#modalProgressBadge1 {
+  height : 80px;
+  width : auto;
+}
+
+#modalProgressBadge2 {
+  height : 80px;
+  width : auto;
+}
+
+#modalProgressBadge3 {
+  height : 80px;
+  width : auto;
 }
 
 #buttons {
@@ -406,14 +452,6 @@ button[disabled] {
   height:150px !important;
 }
 
-#team {
-  background: #271556!important;
-}
-
-
-section {
-    padding: 60px 0;
-}
 
 section .section-title {
     text-align: center;
